@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="164.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Tahmid.FlightInfoController">
+    <children>
+        <TextField fx:id="flightNumberTextfield" layoutX="225.0" layoutY="27.0" />
+        <Button layoutX="393.0" layoutY="27.0" mnemonicParsing="false" onAction="#flightStatusCheckButton" prefHeight="26.0" prefWidth="73.0" text="Check" />
+        <Label layoutX="101.0" layoutY="31.0" text="Enter flight-number:" />
+        <Label fx:id="flightStatusLabel" alignment="CENTER" layoutX="101.0" layoutY="71.0" prefHeight="51.0" prefWidth="366.0" style="-fx-border-color: black;" />
+    </children>
+</AnchorPane>

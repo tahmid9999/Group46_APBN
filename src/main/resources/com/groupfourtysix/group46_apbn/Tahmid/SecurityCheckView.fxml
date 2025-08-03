@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Tahmid.SecurityCheckController">
+    <children>
+        <Label layoutX="79.0" layoutY="83.0" text="Scan status:" />
+        <Label fx:id="scanStatusLabel" alignment="CENTER" layoutX="188.0" layoutY="56.0" prefHeight="71.0" prefWidth="210.0" style="-fx-border-color: black;" />
+        <Button layoutX="433.0" layoutY="79.0" mnemonicParsing="false" onAction="#viewScanResultButton" text="View Scan Result" />
+        <Label layoutX="79.0" layoutY="166.0" text="Security Status:" />
+        <Label fx:id="securityStatusLabel" alignment="CENTER" layoutX="188.0" layoutY="161.0" prefHeight="26.0" prefWidth="210.0" style="-fx-border-color: black;" />
+        <Label fx:id="securityConcernLabel" alignment="CENTER" layoutX="189.0" layoutY="233.0" prefHeight="71.0" prefWidth="210.0" text="Alerts" />
+    </children>
+</AnchorPane>
