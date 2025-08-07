@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="445.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Ahsan_Habib_2222736.ViewAllFlightsController">
+   <children>
+      <Label layoutX="341.0" layoutY="29.0" text="View All Flights" underline="true">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <TableView layoutX="19.0" layoutY="109.0" prefHeight="312.0" prefWidth="906.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Flight Number" />
+          <TableColumn prefWidth="75.0" text="Airline Name" />
+            <TableColumn prefWidth="75.0" text="Aircraft Type" />
+            <TableColumn prefWidth="75.0" text="Aircraft Id" />
+            <TableColumn prefWidth="75.0" text="Departure" />
+            <TableColumn prefWidth="75.0" text="Arrival" />
+            <TableColumn prefWidth="75.0" text="Duration" />
+            <TableColumn prefWidth="75.0" text="From" />
+            <TableColumn prefWidth="75.0" text="To" />
+            <TableColumn prefWidth="75.0" text="Status" />
+            <TableColumn prefWidth="75.0" text="PilotName" />
+            <TableColumn prefWidth="75.0" text="CoPilotName" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
