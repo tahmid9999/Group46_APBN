@@ -5,33 +5,21 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class SecurityCheckController
+public class ReviewFlaggedItemsReportController
 {
-    @javafx.fxml.FXML
-    private Label securityConcernLabel;
-    @javafx.fxml.FXML
-    private Label scanStatusLabel;
-    @javafx.fxml.FXML
-    private Label securityStatusLabel;
-
     @javafx.fxml.FXML
     public void initialize() {
     }
 
     @javafx.fxml.FXML
-    public void viewScanResultButton(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/PassengerDashboard.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/APBNScreeningOfficerDashboard.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Hello!");
+            nextStage.setTitle("APBN Screening Officer Dashboard");
             nextStage.setScene(nextScene);
             nextStage.show();
         }

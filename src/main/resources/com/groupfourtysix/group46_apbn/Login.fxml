@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.groupfourtysix.group46_apbn.LoginController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.LoginController">
+   <children>
+      <Label layoutX="264.0" layoutY="53.0" text="Log In">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="emailAdressTextfield" layoutX="167.0" layoutY="169.0" prefHeight="35.0" prefWidth="266.0" promptText="Email address" />
+      <TextField fx:id="passwordTextfield" layoutX="166.0" layoutY="218.0" prefHeight="35.0" prefWidth="266.0" promptText="Password" />
+      <Button layoutX="167.0" layoutY="277.0" mnemonicParsing="false" onAction="#logInButton" prefHeight="35.0" prefWidth="266.0" text="Log in" />
+      <Label fx:id="logInAlertsLabel" alignment="CENTER" layoutX="167.0" layoutY="288.0" prefHeight="50.0" prefWidth="266.0" />
+      <ComboBox fx:id="userComboInput" layoutX="166.0" layoutY="116.0" prefHeight="35.0" prefWidth="266.0" promptText="Select User" />
+   </children>
 </AnchorPane>

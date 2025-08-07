@@ -6,19 +6,19 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="262.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Tahmid.LuggageInfoSubmissionController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Tahmid.LuggageInfoSubmissionController">
     <children>
-        <TextField fx:id="totalNumOfBagsTextfield" layoutX="187.0" layoutY="26.0" />
-        <Label layoutX="14.0" layoutY="30.0" text="Enter total number of bags:" />
-        <Label layoutX="14.0" layoutY="71.0" text="Enter number of carry-on bags:" />
-        <TextField fx:id="numOfCarryOnBagsTextfield" layoutX="188.0" layoutY="67.0" />
-        <Label layoutX="14.0" layoutY="124.0" text="Select luggage types:" />
-        <CheckBox fx:id="smallCheckbox" layoutX="188.0" layoutY="124.0" mnemonicParsing="false" text="Small" />
-        <CheckBox fx:id="mediumCheckbox" layoutX="282.0" layoutY="124.0" mnemonicParsing="false" text="Medium" />
-        <CheckBox fx:id="largeCheckbox" layoutX="376.0" layoutY="124.0" mnemonicParsing="false" text="Large" />
-        <CheckBox fx:id="oversizedCheckbox" layoutX="456.0" layoutY="124.0" mnemonicParsing="false" text="Oversized" />
-        <Button layoutX="243.0" layoutY="187.0" mnemonicParsing="false" onAction="#luggageInfoSubmitButton" prefHeight="26.0" prefWidth="113.0" text="Submit" />
-        <Label fx:id="vdVrLuggageInfoSubLabel" alignment="CENTER" layoutX="388.0" layoutY="33.0" prefHeight="51.0" prefWidth="150.0" style="-fx-border-color: black;" />
+        <TextField fx:id="totalNumOfBagsTextfield" layoutX="211.0" layoutY="86.0" />
+        <Label layoutX="38.0" layoutY="90.0" text="Enter total number of bags:" />
+        <Label layoutX="38.0" layoutY="131.0" text="Enter number of carry-on bags:" />
+        <TextField fx:id="numOfCarryOnBagsTextfield" layoutX="212.0" layoutY="127.0" />
+        <Label layoutX="38.0" layoutY="184.0" text="Select luggage types:" />
+        <CheckBox fx:id="smallCheckbox" layoutX="212.0" layoutY="184.0" mnemonicParsing="false" text="Small" />
+        <CheckBox fx:id="mediumCheckbox" layoutX="306.0" layoutY="184.0" mnemonicParsing="false" text="Medium" />
+        <CheckBox fx:id="largeCheckbox" layoutX="400.0" layoutY="184.0" mnemonicParsing="false" text="Large" />
+        <CheckBox fx:id="oversizedCheckbox" layoutX="480.0" layoutY="184.0" mnemonicParsing="false" text="Oversized" />
+        <Button layoutX="230.0" layoutY="245.0" mnemonicParsing="false" onAction="#luggageInfoSubmitButton" prefHeight="26.0" prefWidth="113.0" text="Submit" />
+        <Label fx:id="vdVrLuggageInfoSubLabel" alignment="CENTER" layoutX="412.0" layoutY="93.0" prefHeight="51.0" prefWidth="150.0" style="-fx-border-color: black;" />
+      <Button layoutX="38.0" layoutY="336.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
     </children>
 </AnchorPane>
