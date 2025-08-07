@@ -1,4 +1,4 @@
-package com.groupfourtysix.group46_apbn.Tahmid;
+package com.groupfourtysix.group46_apbn.Summy;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
