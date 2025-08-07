@@ -12,13 +12,13 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="62.0" layoutY="89.0" mnemonicParsing="false" onAction="#registerButton" prefHeight="26.0" prefWidth="94.0" text="Register" />
-      <Button layoutX="62.0" layoutY="125.0" mnemonicParsing="false" onAction="#luggageInfoButton" prefHeight="26.0" prefWidth="94.0" text="Luggage Info" />
-      <Button layoutX="62.0" layoutY="165.0" mnemonicParsing="false" onAction="#flightInfoButton" prefHeight="26.0" prefWidth="94.0" text="Flight Info" />
-      <Button layoutX="62.0" layoutY="336.0" mnemonicParsing="false" onAction="#logOutButton" prefHeight="26.0" prefWidth="94.0" text="Log Out" />
-      <Button layoutX="62.0" layoutY="303.0" mnemonicParsing="false" onAction="#cancelTravelButton" prefHeight="26.0" prefWidth="94.0" text="Cancel Travel" />
-      <Button layoutX="62.0" layoutY="235.0" mnemonicParsing="false" onAction="#myJourneyButton" prefHeight="26.0" prefWidth="94.0" text="My Journey" />
-      <Button layoutX="62.0" layoutY="200.0" mnemonicParsing="false" onAction="#securityCheckButton" text="Security Check" />
-      <Button layoutX="62.0" layoutY="271.0" mnemonicParsing="false" onAction="#boardingButton" prefHeight="26.0" prefWidth="94.0" text="Boarding" />
+      <Button layoutX="202.0" layoutY="88.0" mnemonicParsing="false" onAction="#registerButton" prefHeight="26.0" prefWidth="194.0" text="Register" />
+      <Button layoutX="202.0" layoutY="124.0" mnemonicParsing="false" onAction="#luggageInfoButton" prefHeight="26.0" prefWidth="194.0" text="Luggage Info" />
+      <Button layoutX="202.0" layoutY="161.0" mnemonicParsing="false" onAction="#flightInfoButton" prefHeight="26.0" prefWidth="194.0" text="Flight Info" />
+      <Button layoutX="202.0" layoutY="345.0" mnemonicParsing="false" onAction="#logOutButton" prefHeight="26.0" prefWidth="194.0" text="Log Out" />
+      <Button layoutX="202.0" layoutY="305.0" mnemonicParsing="false" onAction="#cancelTravelButton" prefHeight="26.0" prefWidth="194.0" text="Cancel Travel" />
+      <Button layoutX="202.0" layoutY="234.0" mnemonicParsing="false" onAction="#myJourneyButton" prefHeight="26.0" prefWidth="194.0" text="My Journey" />
+      <Button layoutX="202.0" layoutY="200.0" mnemonicParsing="false" onAction="#securityCheckButton" prefHeight="26.0" prefWidth="194.0" text="Security Check" />
+      <Button layoutX="202.0" layoutY="270.0" mnemonicParsing="false" onAction="#boardingButton" prefHeight="26.0" prefWidth="194.0" text="Boarding" />
    </children>
 </AnchorPane>

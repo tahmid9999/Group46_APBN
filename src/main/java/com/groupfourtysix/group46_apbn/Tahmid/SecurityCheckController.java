@@ -23,6 +23,17 @@ public class SecurityCheckController
 
     @javafx.fxml.FXML
     public void viewScanResultButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/ScanResultView.fxml"));
+            Scene nextScene = new Scene(fxmlLoader.load());
+            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            nextStage.setTitle("Scan-result");
+            nextStage.setScene(nextScene);
+            nextStage.show();
+        }
+        catch(Exception e){
+            //
+        }
     }
 
     @javafx.fxml.FXML

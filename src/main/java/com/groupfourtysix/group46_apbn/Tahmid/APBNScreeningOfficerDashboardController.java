@@ -69,14 +69,47 @@ public class APBNScreeningOfficerDashboardController
 
     @javafx.fxml.FXML
     public void writeIncidentReportButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/WriteIncidentReport.fxml"));
+            Scene nextScene = new Scene(fxmlLoader.load());
+            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            nextStage.setTitle("Flag/Clear Passenger");
+            nextStage.setScene(nextScene);
+            nextStage.show();
+        }
+        catch(Exception e){
+            //
+        }
     }
 
     @javafx.fxml.FXML
     public void flagClearPassengerButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/FlagClearPassenger.fxml"));
+            Scene nextScene = new Scene(fxmlLoader.load());
+            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            nextStage.setTitle("Write Incident Report");
+            nextStage.setScene(nextScene);
+            nextStage.show();
+        }
+        catch(Exception e){
+            //
+        }
     }
 
     @javafx.fxml.FXML
     public void finalReportButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/FinalReport.fxml"));
+            Scene nextScene = new Scene(fxmlLoader.load());
+            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            nextStage.setTitle("Final Report");
+            nextStage.setScene(nextScene);
+            nextStage.show();
+        }
+        catch(Exception e){
+            //
+        }
     }
 
     @javafx.fxml.FXML
@@ -111,9 +144,31 @@ public class APBNScreeningOfficerDashboardController
 
     @javafx.fxml.FXML
     public void detainPassengerButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/DetainPassenger.fxml"));
+            Scene nextScene = new Scene(fxmlLoader.load());
+            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            nextStage.setTitle("Detain Passenger");
+            nextStage.setScene(nextScene);
+            nextStage.show();
+        }
+        catch(Exception e){
+            //
+        }
     }
 
     @javafx.fxml.FXML
     public void detainedListButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/ClearDetainedFromDetainedList.fxml"));
+            Scene nextScene = new Scene(fxmlLoader.load());
+            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            nextStage.setTitle("Clear Passenger After Investigation");
+            nextStage.setScene(nextScene);
+            nextStage.show();
+        }
+        catch(Exception e){
+            //
+        }
     }
 }

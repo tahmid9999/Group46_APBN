@@ -5,23 +5,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
-public class ViewSubmittedLuggageInfoController
+public class IncidentReportSubmissionController
 {
-
     @javafx.fxml.FXML
-    private TableView VSLItableview;
-    @javafx.fxml.FXML
-    private TableColumn VSLICarryOnBags;
-    @javafx.fxml.FXML
-    private TableColumn VSLIbagContentsColumn;
-    @javafx.fxml.FXML
-    private TableColumn VSLIluggageTypesColumn;
-    @javafx.fxml.FXML
-    private TableColumn VSLItotalBagsColumn;
+    private TextArea WIRtextarea;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -30,15 +20,19 @@ public class ViewSubmittedLuggageInfoController
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/APBNScreeningOfficerDashboard.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/WriteIncidentReport.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("APBN Screening Officer Dashboard");
+            nextStage.setTitle("Write Incident Report");
             nextStage.setScene(nextScene);
             nextStage.show();
         }
         catch(Exception e){
             //
         }
+    }
+
+    @javafx.fxml.FXML
+    public void WIRsubmitButton(ActionEvent actionEvent) {
     }
 }

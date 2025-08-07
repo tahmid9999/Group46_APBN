@@ -11,16 +11,17 @@ import javafx.stage.Stage;
 
 public class ViewPassengerListController
 {
+
     @javafx.fxml.FXML
-    private TableColumn nameColumn;
+    private TableColumn VPLageColumn;
     @javafx.fxml.FXML
-    private TableColumn ageColumn;
+    private TableColumn VPLnameColumn;
     @javafx.fxml.FXML
-    private TableColumn passportNumberColumn;
+    private TableColumn VPLpassportNumberColumn;
     @javafx.fxml.FXML
-    private TableView passengerListTableView;
+    private TableColumn VPLnationalityColumn;
     @javafx.fxml.FXML
-    private TableColumn nationalityColumn;
+    private TableView VPLtableview;
 
     @javafx.fxml.FXML
     public void initialize() {

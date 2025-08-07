@@ -9,12 +9,12 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Tahmid.ViewPassengerListController">
    <children>
-      <TableView fx:id="passengerListTableView" layoutX="33.0" layoutY="84.0" prefHeight="247.0" prefWidth="530.0">
+      <TableView fx:id="VPLtableview" layoutX="33.0" layoutY="84.0" prefHeight="247.0" prefWidth="530.0">
         <columns>
-          <TableColumn fx:id="nameColumn" prefWidth="150.39996337890625" text="Name" />
-          <TableColumn fx:id="ageColumn" prefWidth="63.2000732421875" text="Age" />
-            <TableColumn fx:id="passportNumberColumn" prefWidth="172.0" text="Passport Number" />
-            <TableColumn fx:id="nationalityColumn" prefWidth="75.0" text="Nationality" />
+          <TableColumn fx:id="VPLnameColumn" prefWidth="150.39996337890625" text="Name" />
+          <TableColumn fx:id="VPLageColumn" prefWidth="63.2000732421875" text="Age" />
+            <TableColumn fx:id="VPLpassportNumberColumn" prefWidth="172.0" text="Passport Number" />
+            <TableColumn fx:id="VPLnationalityColumn" prefWidth="75.0" text="Nationality" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

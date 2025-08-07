@@ -5,10 +5,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 public class ReviewFlaggedItemsReportController
 {
+    @javafx.fxml.FXML
+    private TableColumn RFIRflagReasonColumn;
+    @javafx.fxml.FXML
+    private TableView RFIRflaggedItemReasonTableview;
+    @javafx.fxml.FXML
+    private TableColumn RFIRflaggedItemColumn;
+
     @javafx.fxml.FXML
     public void initialize() {
     }
@@ -26,5 +35,9 @@ public class ReviewFlaggedItemsReportController
         catch(Exception e){
             //
         }
+    }
+
+    @javafx.fxml.FXML
+    public void RFIRexportButton(ActionEvent actionEvent) {
     }
 }

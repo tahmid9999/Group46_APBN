@@ -11,14 +11,15 @@ import javafx.stage.Stage;
 
 public class ScanResultController
 {
+
     @javafx.fxml.FXML
-    private TableColumn detailsColumn;
+    private TableColumn SRdetailsColumn;
     @javafx.fxml.FXML
-    private TableColumn statusColumn;
+    private TableColumn SRcontentColumn;
     @javafx.fxml.FXML
-    private TableView scanResultTableView;
+    private TableColumn SRstatusColumn;
     @javafx.fxml.FXML
-    private TableColumn contentColumn;
+    private TableView SRTableView;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -27,7 +28,7 @@ public class ScanResultController
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/PassengerDashboard.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/SecurityCheckView.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
             nextStage.setTitle("Hello!");

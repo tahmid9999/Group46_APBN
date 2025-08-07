@@ -17,7 +17,7 @@
       <TextField fx:id="emailAdressTextfield" layoutX="167.0" layoutY="169.0" prefHeight="35.0" prefWidth="266.0" promptText="Email address" />
       <TextField fx:id="passwordTextfield" layoutX="166.0" layoutY="218.0" prefHeight="35.0" prefWidth="266.0" promptText="Password" />
       <Button layoutX="167.0" layoutY="277.0" mnemonicParsing="false" onAction="#logInButton" prefHeight="35.0" prefWidth="266.0" text="Log in" />
-      <Label fx:id="logInAlertsLabel" alignment="CENTER" layoutX="167.0" layoutY="288.0" prefHeight="50.0" prefWidth="266.0" />
+      <Label fx:id="logInAlertsLabel" alignment="CENTER" layoutX="167.0" layoutY="326.0" prefHeight="50.0" prefWidth="266.0" />
       <ComboBox fx:id="userComboInput" layoutX="166.0" layoutY="116.0" prefHeight="35.0" prefWidth="266.0" promptText="Select User" />
    </children>
 </AnchorPane>
