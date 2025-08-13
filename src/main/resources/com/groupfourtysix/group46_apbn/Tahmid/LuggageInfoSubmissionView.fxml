@@ -17,8 +17,8 @@
         <CheckBox fx:id="mediumCheckbox" layoutX="306.0" layoutY="184.0" mnemonicParsing="false" text="Medium" />
         <CheckBox fx:id="largeCheckbox" layoutX="400.0" layoutY="184.0" mnemonicParsing="false" text="Large" />
         <CheckBox fx:id="oversizedCheckbox" layoutX="480.0" layoutY="184.0" mnemonicParsing="false" text="Oversized" />
-        <Button layoutX="230.0" layoutY="245.0" mnemonicParsing="false" onAction="#luggageInfoSubmitButton" prefHeight="26.0" prefWidth="113.0" text="Submit" />
-        <Label fx:id="vdVrLuggageInfoSubLabel" alignment="CENTER" layoutX="412.0" layoutY="93.0" prefHeight="51.0" prefWidth="150.0" style="-fx-border-color: black;" />
+        <Button layoutX="230.0" layoutY="283.0" mnemonicParsing="false" onAction="#luggageInfoSubmitButton" prefHeight="26.0" prefWidth="113.0" text="Submit" />
+        <Label fx:id="vdVrLuggageInfoSubLabel" alignment="CENTER" layoutX="82.0" layoutY="229.0" prefHeight="34.0" prefWidth="436.0" style="-fx-border-color: black;" />
       <Button layoutX="38.0" layoutY="336.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
     </children>
 </AnchorPane>

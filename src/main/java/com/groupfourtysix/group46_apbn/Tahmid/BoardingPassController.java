@@ -32,6 +32,7 @@ public class BoardingPassController
 
     @javafx.fxml.FXML
     public void generateBoardingPassButton(ActionEvent actionEvent) {
+
     }
 
     @javafx.fxml.FXML

@@ -12,14 +12,12 @@
         <Label layoutX="73.0" layoutY="137.0" text="Nationality:" />
         <Label layoutX="71.0" layoutY="183.0" text="Luggage Status:" />
         <Label layoutX="71.0" layoutY="210.0" text="Security Clearance:" />
-        <Label layoutX="71.0" layoutY="236.0" text="Boarding Status:" />
         <Label fx:id="nameLabel" alignment="CENTER" layoutX="187.0" layoutY="46.0" prefHeight="18.0" prefWidth="246.0" />
         <Label fx:id="dateOfBirthLabel" alignment="CENTER" layoutX="187.0" layoutY="74.0" prefHeight="18.0" prefWidth="246.0" />
         <Label fx:id="passportNumberLabel" alignment="CENTER" layoutX="187.0" layoutY="107.0" prefHeight="18.0" prefWidth="246.0" />
         <Label fx:id="nationalityLabel" alignment="CENTER" layoutX="187.0" layoutY="138.0" prefHeight="18.0" prefWidth="246.0" />
         <Label fx:id="luggageStatusLabel" alignment="CENTER" layoutX="187.0" layoutY="183.0" prefHeight="18.0" prefWidth="246.0" />
         <Label fx:id="securityClearanceLabel" alignment="CENTER" layoutX="187.0" layoutY="210.0" prefHeight="18.0" prefWidth="246.0" />
-        <Label fx:id="boardingStatusLabel" alignment="CENTER" layoutX="187.0" layoutY="236.0" prefHeight="18.0" prefWidth="246.0" />
         <Button layoutX="248.0" layoutY="287.0" mnemonicParsing="false" onAction="#downloadSummaryButton" text="Download Summary" />
       <Button layoutX="32.0" layoutY="345.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
     </children>

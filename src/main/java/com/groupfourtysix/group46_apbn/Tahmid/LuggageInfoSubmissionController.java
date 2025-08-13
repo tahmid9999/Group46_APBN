@@ -10,6 +10,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class LuggageInfoSubmissionController
 {
     @javafx.fxml.FXML
@@ -31,8 +33,62 @@ public class LuggageInfoSubmissionController
     public void initialize() {
     }
 
+    ArrayList<LuggageInfo> luggageInfoArrayList = new ArrayList<>();
+    ArrayList<String> luggageTypeArrayList = new ArrayList<>();
+
     @javafx.fxml.FXML
     public void luggageInfoSubmitButton(ActionEvent actionEvent) {
+        if (totalNumOfBagsTextfield.getText().isEmpty()) {
+            vdVrLuggageInfoSubLabel.setText("Please enter total number of bags");
+            return;
+        }
+
+        try{
+            int isNumber = Integer.parseInt(totalNumOfBagsTextfield.getText());
+        } catch (Exception e){
+            vdVrLuggageInfoSubLabel.setText("Total number of bags must be a number");
+            return;
+        }
+
+        if (numOfCarryOnBagsTextfield.getText().isEmpty()) {
+            vdVrLuggageInfoSubLabel.setText("Please enter number of carry-on bags");
+            return;
+        }
+
+        try{
+            int isNumber = Integer.parseInt(numOfCarryOnBagsTextfield.getText());
+        } catch (Exception e){
+            vdVrLuggageInfoSubLabel.setText("Number of carry-on bags must be a number");
+            return;
+        }
+
+        String luggageType;
+        if (smallCheckbox.isSelected()) {
+            luggageType = "Small";
+            luggageTypeArrayList.add(luggageType);
+        }
+        if (mediumCheckbox.isSelected()) {
+            luggageType = "Medium";
+            luggageTypeArrayList.add(luggageType);
+        }
+        if (largeCheckbox.isSelected()) {
+            luggageType = "Large";
+            luggageTypeArrayList.add(luggageType);
+        }
+        if (oversizedCheckbox.isSelected()) {
+            luggageType = "Oversized";
+            luggageTypeArrayList.add(luggageType);
+        }
+
+        LuggageInfo lg = new LuggageInfo(
+                Integer.parseInt(totalNumOfBagsTextfield.getText()),
+                Integer.parseInt(numOfCarryOnBagsTextfield.getText()),
+                luggageTypeArrayList
+        );
+
+        luggageInfoArrayList.add(lg);
+        vdVrLuggageInfoSubLabel.setText("Luggage Info has been submitted successfully");
+
     }
 
     @javafx.fxml.FXML

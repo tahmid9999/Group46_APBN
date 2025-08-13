@@ -9,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class PassengerDashboardController
 {
 
@@ -20,18 +22,23 @@ public class PassengerDashboardController
     }
 
     @javafx.fxml.FXML
-    public void registerButton(ActionEvent actionEvent) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/NewPassengerRegistrationView.fxml"));
-            Scene nextScene = new Scene(fxmlLoader.load());
-            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Hello!");
-            nextStage.setScene(nextScene);
-            nextStage.show();
-        }
-        catch(Exception e){
-            //
-        }
+    public void registerButton(ActionEvent actionEvent) throws IOException {
+//        try {
+//            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/NewPassengerRegistration.fxml"));
+//            Scene nextScene = new Scene(fxmlLoader.load());
+//            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+//            nextStage.setTitle("Hello!");
+//            nextStage.setScene(nextScene);
+//            nextStage.show();
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        }
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/NewPassengerRegistration.fxml"));
+        Scene nextScene = new Scene(fxmlLoader.load());
+        Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        nextStage.setTitle("Hello!");
+        nextStage.setScene(nextScene);
+        nextStage.show();
     }
 
     @javafx.fxml.FXML
@@ -45,7 +52,7 @@ public class PassengerDashboardController
             nextStage.show();
         }
         catch(Exception e){
-            //
+            System.out.println(e);
         }
     }
 
@@ -60,7 +67,7 @@ public class PassengerDashboardController
             nextStage.show();
         }
         catch(Exception e){
-            //
+            System.out.println(e);
         }
     }
 
@@ -75,7 +82,7 @@ public class PassengerDashboardController
             nextStage.show();
         }
         catch(Exception e){
-            //
+            System.out.println(e);
         }
     }
 
@@ -90,7 +97,7 @@ public class PassengerDashboardController
             nextStage.show();
         }
         catch(Exception e){
-            //
+            System.out.println(e);
         }
     }
 
@@ -105,7 +112,7 @@ public class PassengerDashboardController
             nextStage.show();
         }
         catch(Exception e){
-            //
+            System.out.println(e);
         }
     }
 
@@ -120,7 +127,7 @@ public class PassengerDashboardController
             nextStage.show();
         }
         catch(Exception e){
-            //
+            System.out.println(e);
         }
     }
 
@@ -135,7 +142,7 @@ public class PassengerDashboardController
             nextStage.show();
         }
         catch(Exception e){
-            //
+            System.out.println(e);
         }
     }
 }

@@ -11,8 +11,6 @@ import javafx.stage.Stage;
 public class TravelSummaryController
 {
     @javafx.fxml.FXML
-    private Label boardingStatusLabel;
-    @javafx.fxml.FXML
     private Label dateOfBirthLabel;
     @javafx.fxml.FXML
     private Label nationalityLabel;

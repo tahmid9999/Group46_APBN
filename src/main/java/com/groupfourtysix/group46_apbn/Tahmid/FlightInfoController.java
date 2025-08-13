@@ -22,6 +22,7 @@ public class FlightInfoController
 
     @javafx.fxml.FXML
     public void flightStatusCheckButton(ActionEvent actionEvent) {
+
     }
 
     @javafx.fxml.FXML
