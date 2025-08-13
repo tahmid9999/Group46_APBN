@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f0f8ff;"
             xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.groupfourtysix.group46_apbn.Tahmid.BoardingGateOfficerController">
+            fx:controller="com.groupfourtysix.group46_apbn.Summy.BoardingGateOfficerController">
 
     <VBox alignment="TOP_CENTER" spacing="20.0"
           AnchorPane.leftAnchor="20.0"

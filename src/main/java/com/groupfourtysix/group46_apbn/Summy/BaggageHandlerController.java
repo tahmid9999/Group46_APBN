@@ -1,9 +1,8 @@
-package com.groupfourtysix.group46_apbn.Tahmid;
+package com.groupfourtysix.group46_apbn.Summy;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
-
-import javax.swing.text.html.ImageView;
+import javafx.scene.image.ImageView;
 
 public class BaggageHandlerController
 {
@@ -28,8 +27,6 @@ public class BaggageHandlerController
     @javafx.fxml.FXML
     private TextField destinationCodeField;
     @javafx.fxml.FXML
-    private Button uploadPhotoButton;
-    @javafx.fxml.FXML
     private Label confirmationLabel;
     @javafx.fxml.FXML
     private Button btnLuggageMgmt;
@@ -44,10 +41,6 @@ public class BaggageHandlerController
 
     @javafx.fxml.FXML
     public void submitIncidentReport(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void handleUpload(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
