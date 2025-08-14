@@ -1,6 +1,7 @@
 package com.groupfourtysix.group46_apbn.Tahmid;
 
 import com.groupfourtysix.group46_apbn.HelloApplication;
+import com.groupfourtysix.group46_apbn.util.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -30,5 +31,7 @@ public class CancelTravelController
 
     @javafx.fxml.FXML
     public void yesCancelButton(ActionEvent actionEvent) {
+        SessionManager.getLoggedInPassenger().setStatus("cancelled");
+        System.out.println(SessionManager.getLoggedInPassenger().getStatus());
     }
 }

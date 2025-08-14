@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.CreateAccountController">
+   <children>
+      <TextField fx:id="CNAemailAdressTextfield" layoutX="178.0" layoutY="155.0" prefHeight="35.0" prefWidth="266.0" promptText="Email address" />
+      <TextField fx:id="CNApasswordTextfield" layoutX="177.0" layoutY="204.0" prefHeight="35.0" prefWidth="266.0" promptText="Password" />
+      <Button layoutX="178.0" layoutY="263.0" mnemonicParsing="false" onAction="#createNewAccountButton" prefHeight="35.0" prefWidth="266.0" text="Create Account" />
+      <ComboBox fx:id="CNAuserComboInput" layoutX="177.0" layoutY="102.0" prefHeight="35.0" prefWidth="266.0" promptText="Select User" />
+      <Label layoutX="195.0" layoutY="38.0" text="Create New Account">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="CNAalertsLabel" alignment="CENTER" layoutX="177.0" layoutY="321.0" prefHeight="50.0" prefWidth="266.0" />
+   </children>
+</AnchorPane>

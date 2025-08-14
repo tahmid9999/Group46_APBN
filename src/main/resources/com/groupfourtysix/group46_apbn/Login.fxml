@@ -19,5 +19,7 @@
       <Button layoutX="167.0" layoutY="277.0" mnemonicParsing="false" onAction="#logInButton" prefHeight="35.0" prefWidth="266.0" text="Log in" />
       <Label fx:id="logInAlertsLabel" alignment="CENTER" layoutX="167.0" layoutY="326.0" prefHeight="50.0" prefWidth="266.0" />
       <ComboBox fx:id="userComboInput" layoutX="166.0" layoutY="116.0" prefHeight="35.0" prefWidth="266.0" promptText="Select User" />
+      <Button layoutX="474.0" layoutY="351.0" mnemonicParsing="false" onAction="#createAccountButton" text="Create Account" />
+      <Label layoutX="462.0" layoutY="317.0" text="Haven't signed up yet?" />
    </children>
 </AnchorPane>

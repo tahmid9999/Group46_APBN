@@ -29,12 +29,31 @@ public class AddFlightInfoController
     private DatePicker ArrivalDatePicker;
     @javafx.fxml.FXML
     private TextField EstimateFlightDurationField;
+    @javafx.fxml.FXML
+    private TextField FlightNumberField;
 
     @javafx.fxml.FXML
     public void initialize() {
+        FlightStatusComboBox.getItems().addAll("Schedule", "Cancelled");
     }
 
     @javafx.fxml.FXML
     public void AddFlightButton(ActionEvent actionEvent) {
+        Flight addFlightData = new Flight(
+                FlightNumberField.getText(),
+                AirlineNameField.getText(),
+                AircraftTypeField.getText(),
+                DepartureAirportField.getText(),
+                ArrivalAirportField.getText(),
+                SeatAvailabilityField.getText(),
+                EstimateFlightDurationField.getText(),
+                DepartureTerminalField.getText(),
+                ArrivalTerminalField.getText(),
+                FlightStatusComboBox.getValue(),
+                DepartureDatePicker.getValue(),
+                ArrivalDatePicker.getValue()
+        );
+        FileHandler.createFile(addFlightData, "FlightInfo.bin");
+//        System.out.println(addFlightData);
     }
 }

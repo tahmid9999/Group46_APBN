@@ -4,8 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="497.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Habib.DeleteFlightInfoController">
    <children>
@@ -14,9 +14,34 @@
             <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-      <TextField layoutX="228.0" layoutY="113.0" prefHeight="35.0" prefWidth="250.0" text="Enter the Flight Number" />
-      <Button layoutX="495.0" layoutY="113.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="Fetch" />
-      <Label layoutX="143.0" layoutY="162.0" prefHeight="222.0" prefWidth="533.0" style="-fx-background-color: #ccc;" text="Flight Information" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="284.0" layoutY="416.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="250.0" text="Delete Flight Information" />
+      <TextField fx:id="FlightNumberField" layoutX="228.0" layoutY="113.0" prefHeight="35.0" prefWidth="250.0" promptText="Enter the Flight Number" />
+      <Button layoutX="495.0" layoutY="113.0" mnemonicParsing="false" onAction="#FetchButton" prefHeight="35.0" prefWidth="80.0" text="Fetch" />
+      <Label layoutX="56.0" layoutY="162.0" prefHeight="222.0" prefWidth="695.0" style="-fx-background-color: #ccc;" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="284.0" layoutY="416.0" mnemonicParsing="false" onAction="#DeleteFlightInformationButton" prefHeight="35.0" prefWidth="250.0" text="Delete Flight Information" />
+      <Label layoutX="84.0" layoutY="184.0" text="Flight Number: " />
+      <Label layoutX="84.0" layoutY="215.0" text="Airline Name: " />
+      <Label layoutX="84.0" layoutY="249.0" text="Aircarft Type:" />
+      <Label layoutX="77.0" layoutY="282.0" text="Departure Airport:" />
+      <Label layoutX="82.0" layoutY="316.0" text="Arrival Airport" />
+      <Label layoutX="79.0" layoutY="345.0" text="Seat Availability:" />
+      <Line endX="-0.399993896484375" endY="191.4000244140625" layoutX="404.0" layoutY="193.0" startX="-0.399993896484375" startY="-31.0" />
+      <Label layoutX="420.0" layoutY="175.0" text="Departure Date:" />
+      <Label layoutX="421.0" layoutY="215.0" text="Arrival Date:" />
+      <Label layoutX="419.0" layoutY="249.0" text="Flight Duration:" />
+      <Label layoutX="419.0" layoutY="282.0" text="Departure Terminal: " />
+      <Label layoutX="417.0" layoutY="316.0" text="Arrival Terminal:" />
+      <Label layoutX="419.0" layoutY="345.0" text="Flight Status:" />
+      <Label fx:id="FlightNumberLabel" layoutX="181.0" layoutY="184.0" prefHeight="18.0" prefWidth="174.0" />
+      <Label fx:id="AirlineNameLabel" layoutX="181.0" layoutY="214.0" prefHeight="18.0" prefWidth="174.0" />
+      <Label fx:id="AircarftTypeLabel" layoutX="174.0" layoutY="248.0" prefHeight="18.0" prefWidth="174.0" />
+      <Label fx:id="DepartureAirportLabel" layoutX="181.0" layoutY="281.0" prefHeight="18.0" prefWidth="174.0" />
+      <Label fx:id="ArrivalAirportLabel" layoutX="174.0" layoutY="315.0" prefHeight="18.0" prefWidth="174.0" />
+      <Label fx:id="SeatAvailabilityLabel" layoutX="174.0" layoutY="344.0" prefHeight="18.0" prefWidth="174.0" />
+      <Label fx:id="DepartureDateLabel" layoutX="516.0" layoutY="175.0" prefHeight="18.0" prefWidth="174.0" />
+      <Label fx:id="ArrivalDateLabel" layoutX="495.0" layoutY="214.0" prefHeight="18.0" prefWidth="174.0" />
+      <Label fx:id="FlightDurationLabel" layoutX="516.0" layoutY="248.0" prefHeight="18.0" prefWidth="174.0" />
+      <Label fx:id="DepartureTerminalLabel" layoutX="538.0" layoutY="281.0" prefHeight="18.0" prefWidth="174.0" />
+      <Label fx:id="ArrivalTerminalLabel" layoutX="516.0" layoutY="315.0" prefHeight="18.0" prefWidth="174.0" />
+      <Label fx:id="FlightStatusLabel" layoutX="495.0" layoutY="344.0" prefHeight="18.0" prefWidth="174.0" />
    </children>
 </AnchorPane>

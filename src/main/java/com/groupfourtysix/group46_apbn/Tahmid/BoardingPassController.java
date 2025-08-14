@@ -1,10 +1,12 @@
 package com.groupfourtysix.group46_apbn.Tahmid;
 
 import com.groupfourtysix.group46_apbn.HelloApplication;
+import com.groupfourtysix.group46_apbn.util.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
@@ -32,7 +34,16 @@ public class BoardingPassController
 
     @javafx.fxml.FXML
     public void generateBoardingPassButton(ActionEvent actionEvent) {
-
+        Passenger p = SessionManager.getLoggedInPassenger();
+        Alert a = new Alert(Alert.AlertType.WARNING);
+        if (p.getStatus().equals("cancelled")){
+            a.setContentText("cancelled");
+            a.showAndWait();
+            return;
+        } else {
+            a.setContentText("approved");
+            a.showAndWait();
+        }
     }
 
     @javafx.fxml.FXML
