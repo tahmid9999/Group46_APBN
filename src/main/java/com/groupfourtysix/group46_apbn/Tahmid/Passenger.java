@@ -17,6 +17,7 @@ public class Passenger implements Serializable {
     private String user;
     private String emailAddress;
     private String password;
+    private String flagReason;
 
     public static ArrayList<Passenger> passengerArrayList = new ArrayList<>();
 
@@ -123,6 +124,14 @@ public class Passenger implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getFlagReason() {
+        return flagReason;
+    }
+
+    public void setFlagReason(String flagReason) {
+        this.flagReason = flagReason;
     }
 
     @Override

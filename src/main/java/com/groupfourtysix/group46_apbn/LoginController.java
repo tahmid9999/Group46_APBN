@@ -22,6 +22,7 @@ public class LoginController
 
     @javafx.fxml.FXML
     public void initialize() {
+        userComboInput.getItems().addAll("Passenger", "APBN Screening Officer", "Airport check-in staff", "Security Scanner Operator", "Baggage Handler", "Boarding Gate Officer", "Flight Scheduler", "Incident Logger");
     }
 
     @javafx.fxml.FXML

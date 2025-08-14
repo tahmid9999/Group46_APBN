@@ -29,19 +29,15 @@ public class BoardingPassController
     }
 
     @javafx.fxml.FXML
-    public void downloadBoardingPassButton(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
     public void generateBoardingPassButton(ActionEvent actionEvent) {
         Passenger p = SessionManager.getLoggedInPassenger();
         Alert a = new Alert(Alert.AlertType.WARNING);
-        if (p.getStatus().equals("cancelled")){
-            a.setContentText("cancelled");
+        if (p.getStatus().equals("Cancelled")){
+            a.setContentText("Cancelled");
             a.showAndWait();
             return;
         } else {
-            a.setContentText("approved");
+            a.setContentText("Approved");
             a.showAndWait();
         }
     }
