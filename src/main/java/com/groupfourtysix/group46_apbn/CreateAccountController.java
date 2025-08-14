@@ -23,7 +23,7 @@ public class CreateAccountController
     @javafx.fxml.FXML
     private Label CNAalertsLabel;
 
-//    List<Account> accountArrayList = AccountFileHandler.readFile("AccountInfo.bin");
+    List<Account> accountArrayList = AccountFileHandler.readFile("AccountInfo.bin");
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -86,9 +86,11 @@ public class CreateAccountController
 //            }
 //        }
 
-//        for (Account ac: accountArrayList) {
-//            System.out.println(ac);
-//        }
+        for (Account ac: accountArrayList) {
+//            if(ac.getAccountUserType().equalsIgnoreCase("Ba")){
+                System.out.println(ac);
+//            }
+        }
 
 //        if(CNApasswordTextfield.getText().trim().isEmpty()) {
 //            CNAalertsLabel.setText("Please enter your password properly.");
