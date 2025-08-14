@@ -5,6 +5,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
+import java.util.List;
+
 public class EditFlightInfoController
 {
     @javafx.fxml.FXML
@@ -34,6 +36,13 @@ public class EditFlightInfoController
 
     @javafx.fxml.FXML
     public void initialize() {
+        List<Flight> flights = FileHandler.readFile("FlightInfo.bin");
+        for (Flight flight: flights){
+            if(flight.getFlightNumber().equalsIgnoreCase("flight2")) {
+                FlightNumberField.setText(flights.getFirst().getFlightNumber());
+                System.out.println(flight);
+            }
+        }
     }
 
     @javafx.fxml.FXML
