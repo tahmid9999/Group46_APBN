@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="445.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Ahsan_Habib_2222736.ViewAllFlightsController">
+<AnchorPane prefHeight="445.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Habib.ViewAllFlightsController">
    <children>
       <Label layoutX="341.0" layoutY="29.0" text="View All Flights" underline="true">
          <font>

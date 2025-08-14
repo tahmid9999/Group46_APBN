@@ -39,4 +39,8 @@ public class BoardingGateOfficerController
     @javafx.fxml.FXML
     public void onLoadManifest(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void onDenyBoarding(ActionEvent actionEvent) {
+    }
 }

@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="497.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Ahsan_Habib_2222736.DeleteFlightInfoController">
+<AnchorPane prefHeight="497.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Habib.DeleteFlightInfoController">
    <children>
       <Label layoutX="195.0" layoutY="33.0" text="Delete Flight Information" textAlignment="CENTER" underline="true">
          <font>

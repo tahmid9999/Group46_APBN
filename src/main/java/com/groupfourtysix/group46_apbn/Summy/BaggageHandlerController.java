@@ -13,11 +13,7 @@ public class BaggageHandlerController
     @javafx.fxml.FXML
     private TableColumn luggageIdCol;
     @javafx.fxml.FXML
-    private Button tagSubmitButton;
-    @javafx.fxml.FXML
     private ImageView photoPreview;
-    @javafx.fxml.FXML
-    private Button btnIncidentReport;
     @javafx.fxml.FXML
     private Button submitReportButton;
     @javafx.fxml.FXML
@@ -25,15 +21,19 @@ public class BaggageHandlerController
     @javafx.fxml.FXML
     private TextArea issueDescriptionField;
     @javafx.fxml.FXML
-    private TextField destinationCodeField;
-    @javafx.fxml.FXML
     private Label confirmationLabel;
     @javafx.fxml.FXML
-    private Button btnLuggageMgmt;
-    @javafx.fxml.FXML
-    private TextField suspiciousLuggageIdField;
-    @javafx.fxml.FXML
     private TableView luggageTable;
+    @javafx.fxml.FXML
+    private ComboBox flagIDComboBox;
+    @javafx.fxml.FXML
+    private TextField firstbagweight;
+    @javafx.fxml.FXML
+    private Button btndailyeport;
+    @javafx.fxml.FXML
+    private TextField secondbagweight;
+    @javafx.fxml.FXML
+    private ComboBox TotalBagsComboBox;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -43,15 +43,19 @@ public class BaggageHandlerController
     public void submitIncidentReport(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void openIncidentReporting(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void openLuggageManagement(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void handleTagSubmission(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void opendownloadreport(ActionEvent actionEvent) {
     }
 }
