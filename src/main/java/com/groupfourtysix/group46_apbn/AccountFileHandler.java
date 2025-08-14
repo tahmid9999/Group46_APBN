@@ -1,8 +1,5 @@
 package com.groupfourtysix.group46_apbn;
 
-import com.groupfourtysix.group46_apbn.Habib.FileHandler;
-import com.groupfourtysix.group46_apbn.Habib.Flight;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +21,7 @@ public class AccountFileHandler extends ObjectOutputStream{
             if (f.exists()){
                 fos = new FileOutputStream(f, true);
 //                Changing statement
-                oos = new FileHandler(fos);
+                oos = new AccountFileHandler(fos);
             }else {
                 fos = new FileOutputStream(f);
                 oos = new ObjectOutputStream(fos);
