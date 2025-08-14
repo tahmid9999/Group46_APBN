@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javax.imageio.IIOException;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CreateAccountController
 {
@@ -22,34 +23,38 @@ public class CreateAccountController
     @javafx.fxml.FXML
     private Label CNAalertsLabel;
 
+    List<Account> accountArrayList = AccountFileHandler.readFile("AccountInfo.bin");
+
     @javafx.fxml.FXML
-    public void initialize() throws IOException{
+    public void initialize() {
         CNAuserComboInput.getItems().addAll("Passenger", "APBN Screening Officer", "Airport check-in staff", "Security Scanner Operator", "Baggage Handler", "Boarding Gate Officer", "Flight Scheduler", "Incident Logger");
 
         //read file
-        File file = new File("passengerAccountInfo.bin");
-
-        if (!file.exists()) {
-            return;
-        }
-
-        FileInputStream fis = new FileInputStream(file);
-        ObjectInputStream ois = new ObjectInputStream(fis);
-
-        try{
-            while (true){
-                Account account = (Account) ois.readObject();
-                Account.accountPassengerArrayList.add(account);
-            }
-        } catch (EOFException eof){
-            System.out.println("End of file reached");
-        } catch (ClassNotFoundException cnf) {
-            System.out.println("Class not found");
-        }
+//        File file = new File("passengerAccountInfo.bin");
+//
+//        if (!file.exists()) {
+//            return;
+//        }
+//
+//        FileInputStream fis = new FileInputStream(file);
+//        ObjectInputStream ois = new ObjectInputStream(fis);
+//
+//        try{
+//            while (true){
+//                Account account = (Account) ois.readObject();
+//                Account.accountPassengerArrayList.add(account);
+//            }
+//        } catch (EOFException eof){
+//            System.out.println("End of file reached");
+//        } catch (ClassNotFoundException cnf) {
+//            System.out.println("Class not found");
+//        }
     }
 
+
+
     @javafx.fxml.FXML
-    public void createNewAccountButton(ActionEvent actionEvent) throws IOException {
+    public void createNewAccountButton(ActionEvent actionEvent) {
         if (CNAuserComboInput.getValue() == null) {
             CNAalertsLabel.setText("Please select user type.");
         }
@@ -81,7 +86,7 @@ public class CreateAccountController
             }
         }
 
-        for (Account ac: Account.accountPassengerArrayList) {
+        for (Account ac: accountArrayList) {
             System.out.println(ac);
         }
 
@@ -95,30 +100,33 @@ public class CreateAccountController
             return;
         }
 
-        Account psAC = new Account(
+        Account ac = new Account(
                 CNAuserComboInput.getValue(),
                 CNAemailAdressTextfield.getText(),
                 CNApasswordTextfield.getText()
         );
 
+        //Write
+        AccountFileHandler.createFile(ac, "AccountInfo.bin");
+
         //write file
-        File file = new File("AccountInfo.bin");
-        FileOutputStream fos;
-        ObjectOutputStream oos;
-
-        if (file.exists()) {
-            fos = new FileOutputStream(file, true);
-            oos = new AppendableObjectOutputStream(fos);
-        } else {
-            fos = new FileOutputStream(file, true);
-            oos = new ObjectOutputStream(fos);
-        }
-
-        oos.writeObject(psAC);
-        oos.close();
-
-        Account.accountPassengerArrayList.add(psAC);
-        CNAalertsLabel.setText("Account has been created successfully");
+//        File file = new File("AccountInfo.bin");
+//        FileOutputStream fos;
+//        ObjectOutputStream oos;
+//
+//        if (file.exists()) {
+//            fos = new FileOutputStream(file, true);
+//            oos = new AppendableObjectOutputStream(fos);
+//        } else {
+//            fos = new FileOutputStream(file, true);
+//            oos = new ObjectOutputStream(fos);
+//        }
+//
+//        oos.writeObject(psAC);
+//        oos.close();
+//
+//        Account.accountPassengerArrayList.add(psAC);
+//        CNAalertsLabel.setText("Account has been created successfully");
 
 //        ArrayList<> accountArrayList = Login.accountPassengerArrayList;
 

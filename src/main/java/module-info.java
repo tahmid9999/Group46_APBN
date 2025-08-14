@@ -11,4 +11,6 @@ module com.groupfourtysix.group46_apbn {
     exports com.groupfourtysix.group46_apbn.Summy;
     opens com.groupfourtysix.group46_apbn.Summy to javafx.fxml;
     exports com.groupfourtysix.group46_apbn;
+    exports com.groupfourtysix.group46_apbn.Habib;
+    opens com.groupfourtysix.group46_apbn.Habib to javafx.fxml;
 }
