@@ -8,7 +8,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.ArrayList;
 
-private ArrayList<Passenger> allPassengers;
+
 
 
 public class BaggageHandlerController
@@ -19,8 +19,6 @@ public class BaggageHandlerController
     private TableColumn<Passenger, String>passengerCol;
     @javafx.fxml.FXML
     private TableColumn<Passenger, String>luggageIdCol;
-    @javafx.fxml.FXML
-    private Button submitReportButton;
     @javafx.fxml.FXML
     private TableColumn<Passenger, String> flightCol;
     @javafx.fxml.FXML
@@ -39,6 +37,16 @@ public class BaggageHandlerController
     private TextField secondbagweight;
     @javafx.fxml.FXML
     private ComboBox<Integer> TotalBagsComboBox;
+    @javafx.fxml.FXML
+    private Button SearchLuggageButton;
+    @javafx.fxml.FXML
+    private Button editBaggageButton;
+    @javafx.fxml.FXML
+    private Button submitButton;
+    @javafx.fxml.FXML
+    private Button manualcheckbtn;
+    @javafx.fxml.FXML
+    private Button DelteButton;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -50,27 +58,6 @@ public class BaggageHandlerController
         TotalBagsComboBox.getItems().addAll(1,2);
 
         confirmationLabel.setVisible(false);
-
-        allPassengers = new ArrayList<>();
-
-        allPassengers.add(new Passenger("Summy",
-                        java.time.LocalDate.of(2002,1,30),
-                        "P12698",
-                        "Bangladeshi",
-                        "P101",
-                        "Biman1"));
-
-
-
-
-        allPassengers.add(new Passenger("Raihan",
-                        java.time.LocalDate.of(2000,1,30),
-                        "P12567",
-                        "Bangladeshi",
-                        "P102",
-                        "Novo1"
-                        ));
-
         luggageTable.getItems().clear();
 
 
@@ -79,7 +66,7 @@ public class BaggageHandlerController
 
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void submitIncidentReport(ActionEvent actionEvent) {
 
         String passengerID = tagIdField.getText();
@@ -100,10 +87,10 @@ public class BaggageHandlerController
             return;
         }
 
-        Passenger foundPassenger = null;
-        For (Passenger passenger : allPassengers){
+//        Passenger foundPassenger = null;
+//        For (Passenger passenger : allPassengers){
 
-        }
+//        }
     }
 
     @Deprecated
@@ -120,5 +107,25 @@ public class BaggageHandlerController
 
     @javafx.fxml.FXML
     public void opendownloadreport(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void openEditBaggageView(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void Matchpassenger(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void DeleteSpecificBaggageInformation(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void openManualCheckView(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void openSearch(ActionEvent actionEvent) {
     }
 }

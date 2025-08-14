@@ -29,8 +29,6 @@ public class DailyReportController
     @javafx.fxml.FXML
     private Label generatedAtLabel;
     @javafx.fxml.FXML
-    private Button btnExportPdf;
-    @javafx.fxml.FXML
     private Label totalIncidentsLabel;
     @javafx.fxml.FXML
     private TableColumn overweightCol;
@@ -39,7 +37,7 @@ public class DailyReportController
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void exportToPdf(ActionEvent actionEvent) {
     }
 

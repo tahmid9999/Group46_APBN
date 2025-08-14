@@ -31,6 +31,7 @@
 
         <HBox spacing="30.0">
             <Button fx:id="btndailyeport" onAction="#opendownloadreport" style="-fx-background-color: #27ae60; -fx-text-fill: white;" text="Daily Report" />
+         <Button fx:id="SearchLuggageButton" onAction="#openSearch" style="-fx-background-color: #27ae60; -fx-text-fill: white;" text="Search Luggage" />
         </HBox>
 
         <TableView fx:id="luggageTable" prefHeight="200.0" prefWidth="800.0">
@@ -64,7 +65,10 @@
                 <TextArea fx:id="issueDescriptionField" prefHeight="64.0" prefWidth="354.0" />
             </HBox>
             <HBox alignment="CENTER_LEFT" spacing="20.0">
-                <Button fx:id="submitReportButton" onAction="#submitIncidentReport" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Submit Report" />
+                <Button fx:id="submitButton" onAction="#Matchpassenger" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Submit" />
+            <Button fx:id="editBaggageButton" onAction="#openEditBaggageView" style="-fx-background-color: #27ae60; -fx-text-fill: white;" text="Edit Baggage Information" />
+            <Button fx:id="DelteButton" onAction="#DeleteSpecificBaggageInformation" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Delete Specific Baggage Information" />
+            <Button fx:id="manualcheckbtn" onAction="#openManualCheckView" style="-fx-background-color: #27ae60; -fx-text-fill: white;" text="Submit Baggage for manual Checking" />
             </HBox>
             <HBox alignment="CENTER_RIGHT" />
         </VBox>
