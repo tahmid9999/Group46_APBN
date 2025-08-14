@@ -8,7 +8,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -38,7 +37,7 @@
             <columns>
                 <TableColumn fx:id="luggageIdCol" prefWidth="244.8" text="Luggage ID" />
                 <TableColumn fx:id="passengerCol" prefWidth="338.4" text="Passenger" />
-                <TableColumn fx:id="flightCol" prefWidth="217.6" text="Flight No" />
+                <TableColumn fx:id="flightCol" prefWidth="236.0" text="Flight No" />
             </columns>
         </TableView>
 
@@ -65,7 +64,6 @@
                 <TextArea fx:id="issueDescriptionField" prefHeight="64.0" prefWidth="354.0" />
             </HBox>
             <HBox alignment="CENTER_LEFT" spacing="20.0">
-                <ImageView fx:id="photoPreview" fitHeight="80.0" fitWidth="100.0" />
                 <Button fx:id="submitReportButton" onAction="#submitIncidentReport" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Submit Report" />
             </HBox>
             <HBox alignment="CENTER_RIGHT" />
