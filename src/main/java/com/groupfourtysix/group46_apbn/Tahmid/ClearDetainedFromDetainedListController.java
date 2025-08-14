@@ -30,12 +30,12 @@ public class ClearDetainedFromDetainedListController
 
     @javafx.fxml.FXML
     public void CDclearPassengerButton(ActionEvent actionEvent) {
-         Passenger selectedSlot = CDtableview.getSelectionModel().getSelectedItem();
-        if (selectedSlot != null) {
-            Passenger updatedSlot = new Passenger(selectedSlot.getName(), selectedSlot.getDateOfBirth(), selectedSlot.getPassportNumber(), selectedSlot.getNationality(), selectedSlot.getPassengerID(), selectedSlot.getFlightNumber(), selectedSlot.getStatus(), "Clear");
-
-            slotTable.getItems().remove(selectedSlot);
-            slotTable.getItems().add(updatedSlot);
+//         Passenger selectedSlot = CDtableview.getSelectionModel().getSelectedItem();
+//        if (selectedSlot != null) {
+//            Passenger updatedSlot = new Passenger(selectedSlot.getName(), selectedSlot.getDateOfBirth(), selectedSlot.getPassportNumber(), selectedSlot.getNationality(), selectedSlot.getPassengerID(), selectedSlot.getFlightNumber(), selectedSlot.getStatus(), "Clear");
+//
+//            slotTable.getItems().remove(selectedSlot);
+//            slotTable.getItems().add(updatedSlot);
     }
 
     @javafx.fxml.FXML
@@ -61,15 +61,3 @@ public class ClearDetainedFromDetainedListController
     public void CDreinvestigateButton(ActionEvent actionEvent) {
     }
 }
-
-    @javafx.fxml.FXML
-    public void backButton(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void CDsubmitButton(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void CDreinvestigateButton(ActionEvent actionEvent) {
-    }
