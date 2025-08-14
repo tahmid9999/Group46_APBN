@@ -12,17 +12,17 @@ import javafx.stage.Stage;
 public class ClearDetainedFromDetainedListController
 {
     @javafx.fxml.FXML
-    private TableColumn CDflagReasonColumn;
+    private TableColumn<Passenger, String> CDflagReasonColumn;
     @javafx.fxml.FXML
-    private TableColumn CDdetainedNameColumn;
+    private TableColumn<Passenger, String> CDdetainedNameColumn;
     @javafx.fxml.FXML
-    private TableView CDtableview;
+    private TableView<Passenger> CDtableview;
     @javafx.fxml.FXML
-    private TableColumn CDpassportNumberColumn;
+    private TableColumn<Passenger, String> CDpassportNumberColumn;
     @javafx.fxml.FXML
-    private TableColumn CDflightNumberColumn;
+    private TableColumn<Passenger, String> CDflightNumberColumn;
     @javafx.fxml.FXML
-    private TableColumn CDstatusColumn;
+    private TableColumn<Passenger, String> CDstatusColumn;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -30,6 +30,12 @@ public class ClearDetainedFromDetainedListController
 
     @javafx.fxml.FXML
     public void CDclearPassengerButton(ActionEvent actionEvent) {
+         Passenger selectedSlot = CDtableview.getSelectionModel().getSelectedItem();
+        if (selectedSlot != null) {
+            Passenger updatedSlot = new Passenger(selectedSlot.getName(), selectedSlot.getDateOfBirth(), selectedSlot.getPassportNumber(), selectedSlot.getNationality(), selectedSlot.getPassengerID(), selectedSlot.getFlightNumber(), selectedSlot.getStatus(), "Clear");
+
+            slotTable.getItems().remove(selectedSlot);
+            slotTable.getItems().add(updatedSlot);
     }
 
     @javafx.fxml.FXML
@@ -55,3 +61,15 @@ public class ClearDetainedFromDetainedListController
     public void CDreinvestigateButton(ActionEvent actionEvent) {
     }
 }
+
+    @javafx.fxml.FXML
+    public void backButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void CDsubmitButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void CDreinvestigateButton(ActionEvent actionEvent) {
+    }

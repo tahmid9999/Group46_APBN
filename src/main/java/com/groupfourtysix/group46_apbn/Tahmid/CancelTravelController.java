@@ -31,7 +31,7 @@ public class CancelTravelController
 
     @javafx.fxml.FXML
     public void yesCancelButton(ActionEvent actionEvent) {
-        SessionManager.getLoggedInPassenger().setStatus("cancelled");
+        SessionManager.getLoggedInPassenger().setStatus("Cancelled");
         System.out.println(SessionManager.getLoggedInPassenger().getStatus());
     }
 }

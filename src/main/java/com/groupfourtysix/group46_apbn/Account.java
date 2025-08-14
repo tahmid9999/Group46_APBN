@@ -10,8 +10,6 @@ public class Account implements Serializable {
     private String accountEmail;
     private String accountPassword;
 
-    public static ArrayList<Account> accountPassengerArrayList= new ArrayList<>();
-
     public Account(String accountUserType, String accountEmail, String accountPassword) {
         this.accountUserType = accountUserType;
         this.accountEmail = accountEmail;

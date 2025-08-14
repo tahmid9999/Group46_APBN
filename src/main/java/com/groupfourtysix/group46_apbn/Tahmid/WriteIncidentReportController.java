@@ -5,8 +5,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 public class WriteIncidentReportController
@@ -17,6 +19,10 @@ public class WriteIncidentReportController
     private TableView WIRtableview;
     @javafx.fxml.FXML
     private TableColumn WIRstatusColumn;
+    @javafx.fxml.FXML
+    private TextArea WIRtextarea;
+    @javafx.fxml.FXML
+    private Label WIRalertLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -38,17 +44,12 @@ public class WriteIncidentReportController
     }
 
     @javafx.fxml.FXML
-    public void writeReportButton(ActionEvent actionEvent) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/IncidentReportSubmission.fxml"));
-            Scene nextScene = new Scene(fxmlLoader.load());
-            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Write Incident Report");
-            nextStage.setScene(nextScene);
-            nextStage.show();
+    public void WIRsubmitButton(ActionEvent actionEvent) {
+        if (WIRtextarea.getText().isEmpty()) {
+            WIRalertLabel.setText("Incident report can't be empty.");
+            return;
         }
-        catch(Exception e){
-            //
-        }
+
+
     }
 }
