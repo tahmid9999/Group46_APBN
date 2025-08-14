@@ -1,6 +1,7 @@
 package com.groupfourtysix.group46_apbn.Tahmid;
 
 import com.groupfourtysix.group46_apbn.HelloApplication;
+import com.groupfourtysix.group46_apbn.util.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -22,9 +23,13 @@ public class TravelSummaryController
     private Label nameLabel;
     @javafx.fxml.FXML
     private Label luggageStatusLabel;
+    private Passenger passenger = SessionManager.getLoggedInPassenger();
 
     @javafx.fxml.FXML
     public void initialize() {
+        nameLabel.setText(passenger.getName());
+        nationalityLabel.setText(passenger.getNationality());
+        passportNumberLabel.setText(passenger.getPassportNumber());
     }
 
     @javafx.fxml.FXML

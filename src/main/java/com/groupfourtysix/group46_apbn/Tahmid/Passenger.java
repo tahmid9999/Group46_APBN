@@ -2,6 +2,7 @@ package com.groupfourtysix.group46_apbn.Tahmid;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Passenger implements Serializable {
     private String name;
@@ -13,7 +14,11 @@ public class Passenger implements Serializable {
     private LuggageInfo luggageInfo;
     private String status;
     private String boardingPassID;
+    private String user;
+    private String emailAddress;
+    private String password;
 
+    public static ArrayList<Passenger> passengerArrayList = new ArrayList<>();
 
     public Passenger(String name, LocalDate dateOfBirth, String passportNumber, String nationality, String passengerID, String flightNumber) {
         this.name = name;
@@ -96,6 +101,30 @@ public class Passenger implements Serializable {
         this.boardingPassID = boardingPassID;
     }
 
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "Passenger{" +
@@ -108,6 +137,9 @@ public class Passenger implements Serializable {
                 ", luggageInfo=" + luggageInfo +
                 ", status='" + status + '\'' +
                 ", boardingPassID='" + boardingPassID + '\'' +
+                ", user='" + user + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

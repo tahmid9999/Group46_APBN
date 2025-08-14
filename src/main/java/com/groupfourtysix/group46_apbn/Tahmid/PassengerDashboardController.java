@@ -1,6 +1,7 @@
 package com.groupfourtysix.group46_apbn.Tahmid;
 
 import com.groupfourtysix.group46_apbn.HelloApplication;
+import com.groupfourtysix.group46_apbn.util.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -8,8 +9,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.converter.LocalDateStringConverter;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class PassengerDashboardController
 {
@@ -19,26 +22,26 @@ public class PassengerDashboardController
 
     @javafx.fxml.FXML
     public void initialize() {
+//        for (Passenger ps: Passenger.passengerArrayList) {
+//
+//        }
+//        Passenger passenger =
+//
+//        SessionManager.setLoggedInPassenger(passenger);
     }
 
     @javafx.fxml.FXML
     public void registerButton(ActionEvent actionEvent) throws IOException {
-//        try {
-//            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/NewPassengerRegistration.fxml"));
-//            Scene nextScene = new Scene(fxmlLoader.load());
-//            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-//            nextStage.setTitle("Hello!");
-//            nextStage.setScene(nextScene);
-//            nextStage.show();
-//        } catch (Exception e) {
-//            System.out.println(e);
-//        }
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/NewPassengerRegistration.fxml"));
-        Scene nextScene = new Scene(fxmlLoader.load());
-        Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        nextStage.setTitle("Hello!");
-        nextStage.setScene(nextScene);
-        nextStage.show();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/NewPassengerRegistration.fxml"));
+            Scene nextScene = new Scene(fxmlLoader.load());
+            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            nextStage.setTitle("Hello!");
+            nextStage.setScene(nextScene);
+            nextStage.show();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     @javafx.fxml.FXML

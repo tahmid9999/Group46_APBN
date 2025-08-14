@@ -43,7 +43,7 @@ public class NewPassengerRegistrationController
         try{
             while (true){
                 Passenger passenger = (Passenger) ois.readObject();
-                passengerArrayList.add(passenger);
+                Passenger.passengerArrayList.add(passenger);
             }
         } catch (EOFException eof){
             System.out.println("End of file reached");
@@ -53,7 +53,7 @@ public class NewPassengerRegistrationController
 
     }
 
-    ArrayList<Passenger> passengerArrayList = new ArrayList<>();
+//    ArrayList<Passenger> passengerArrayList = new ArrayList<>();
 
     public void showAlert(String message){
         Alert a = new Alert(Alert.AlertType.WARNING);
@@ -66,7 +66,7 @@ public class NewPassengerRegistrationController
         int Num = (int)(Math.random() * 90000) + 10000;
         String psID = prefix + Num;
 
-        for (Passenger ps : passengerArrayList) {
+        for (Passenger ps : Passenger.passengerArrayList) {
             if (ps.getPassengerID().equals(psID)) {
                 return generateUniquePassengerID(); // recursion
             }
@@ -106,7 +106,7 @@ public class NewPassengerRegistrationController
             return;
         }
 
-        for (Passenger ps: passengerArrayList) {
+        for (Passenger ps: Passenger.passengerArrayList) {
             if (ps.getPassportNumber().equals(passportNumberTextfield.getText())) {
                 NPRvdVrLabel.setText("This passenger already exists");
                 return;
@@ -144,7 +144,7 @@ public class NewPassengerRegistrationController
         oos.writeObject(ps);
         oos.close();
 
-        passengerArrayList.add(ps);
+        Passenger.passengerArrayList.add(ps);
         NPRvdVrLabel.setText("Passenger info has been saved successfully");
         flightNoPasIDLabel.setText("Your Flight Number is " + flightNumber + " & your Passenger ID is " + passengerID);
 
