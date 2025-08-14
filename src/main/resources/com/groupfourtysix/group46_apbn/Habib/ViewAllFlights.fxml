@@ -6,28 +6,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="445.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Habib.ViewAllFlightsController">
    <children>
-      <Label layoutX="341.0" layoutY="29.0" text="View All Flights" underline="true">
+      <Label layoutX="233.0" layoutY="22.0" text="View All Flights Information" underline="true">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-      <TableView layoutX="19.0" layoutY="109.0" prefHeight="312.0" prefWidth="906.0">
+      <TableView fx:id="FlightInformationTable" layoutX="19.0" layoutY="109.0" prefHeight="312.0" prefWidth="906.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Flight Number" />
-          <TableColumn prefWidth="75.0" text="Airline Name" />
-            <TableColumn prefWidth="75.0" text="Aircraft Type" />
-            <TableColumn prefWidth="75.0" text="Aircraft Id" />
-            <TableColumn prefWidth="75.0" text="Departure" />
-            <TableColumn prefWidth="75.0" text="Arrival" />
-            <TableColumn prefWidth="75.0" text="Duration" />
-            <TableColumn prefWidth="75.0" text="From" />
-            <TableColumn prefWidth="75.0" text="To" />
-            <TableColumn prefWidth="75.0" text="Status" />
-            <TableColumn prefWidth="75.0" text="PilotName" />
-            <TableColumn prefWidth="75.0" text="CoPilotName" />
+          <TableColumn fx:id="FlightNumberCol" prefWidth="75.0" text="Flight Number" />
+          <TableColumn fx:id="AirlineNameCol" prefWidth="75.0" text="Airline Name" />
+            <TableColumn fx:id="AircraftTypeCol" prefWidth="75.0" text="Aircraft Type" />
+            <TableColumn fx:id="DepartureAirportCol" prefWidth="75.0" text="Departure Airport" />
+            <TableColumn fx:id="ArrivalAirportCol" prefWidth="75.0" text="Arrival Airport" />
+            <TableColumn fx:id="SeatAvailabilityCol" prefWidth="75.0" text="Seat Availability" />
+            <TableColumn fx:id="DepartureDateCol" prefWidth="75.0" text="Departure Date" />
+            <TableColumn fx:id="ArrivalDateCol" prefWidth="75.0" text="Arrival Date" />
+            <TableColumn fx:id="FlightDurationCol" prefWidth="75.0" text="Flight Duration" />
+            <TableColumn fx:id="DepartureTerminalCol" prefWidth="75.0" text="Departure Terminal" />
+            <TableColumn fx:id="ArrivalTerminalCol" prefWidth="75.0" text="Arrival Terminal" />
+            <TableColumn fx:id="FlightStatusCol" prefWidth="75.0" text="Flight Status" />
         </columns>
       </TableView>
    </children>
