@@ -23,7 +23,7 @@ public class CreateAccountController
     @javafx.fxml.FXML
     private Label CNAalertsLabel;
 
-//    List<Account> accountArrayList = AccountFileHandler.readFile("AccountInfo.bin");
+    List<Account> accountArrayList = AccountFileHandler.readFile("AccountInfo.bin");
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -55,40 +55,43 @@ public class CreateAccountController
 
     @javafx.fxml.FXML
     public void createNewAccountButton(ActionEvent actionEvent) {
-//        if (CNAuserComboInput.getValue() == null) {
-//            CNAalertsLabel.setText("Please select user type.");
-//        }
+        if (CNAuserComboInput.getValue() == null) {
+            CNAalertsLabel.setText("Please select user type.");
+        }
 //
-//        if(CNAemailAdressTextfield.getText().trim().isEmpty()) {
-//            CNAalertsLabel.setText("Please enter your email address properly.");
-//            return;
-//        }
+        if(CNAemailAdressTextfield.getText().trim().isEmpty()) {
+            CNAalertsLabel.setText("Please enter your email address properly.");
+            return;
+        }
 
-//        for (int i = 0; i < CNAemailAdressTextfield.getText().length(); i++) {
-//            boolean atSignFound;
-//            if (CNAemailAdressTextfield.getText().charAt(i) == '@') {
-//                atSignFound = true;
-//            }
-//            else {
-//                atSignFound = false;
-//                return;
-//            }
-//        }
+        boolean atSignFound = false;
+        for (int i = 0; i < CNAemailAdressTextfield.getText().length(); i++) {
+            if (CNAemailAdressTextfield.getText().charAt(i) == '@') {
+                atSignFound = true;
+            }
+        }
 
-//        for (int i = 0; i < CNAemailAdressTextfield.getText().length(); i++) {
-//            boolean dotFound;
-//            if (CNAemailAdressTextfield.getText().charAt(i) == '.') {
-//                dotFound = true;
-//            }
-//            else {
-//                dotFound = false;
-//                return;
-//            }
-//        }
+        if(!atSignFound){
+            CNAalertsLabel.setText("Please sddee properly.");
+        }
 
-//        for (Account ac: accountArrayList) {
-//            System.out.println(ac);
-//        }
+        boolean dotFound;
+        for (int i = 0; i < CNAemailAdressTextfield.getText().length(); i++) {
+            if (CNAemailAdressTextfield.getText().charAt(i) == '.') {
+                dotFound = true;
+            }
+            else {
+                dotFound = false;
+            }
+        }
+
+        String em = "eee@g.ocm";
+        for (Account accc: accountArrayList) {
+
+            if(accc.getAccountEmail().equalsIgnoreCase(em)){
+                System.out.println(accc.getAccountPassword());
+            }
+        }
 
 //        if(CNApasswordTextfield.getText().trim().isEmpty()) {
 //            CNAalertsLabel.setText("Please enter your password properly.");
@@ -130,5 +133,9 @@ public class CreateAccountController
 
 //        ArrayList<> accountArrayList = Login.accountPassengerArrayList;
 
+    }
+
+    @javafx.fxml.FXML
+    public void backButton(ActionEvent actionEvent) {
     }
 }
