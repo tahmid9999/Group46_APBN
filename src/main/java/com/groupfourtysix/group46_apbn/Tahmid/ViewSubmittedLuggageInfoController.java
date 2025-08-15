@@ -13,15 +13,15 @@ public class ViewSubmittedLuggageInfoController
 {
 
     @javafx.fxml.FXML
-    private TableView VSLItableview;
+    private TableView<LuggageInfo> VSLItableview;
     @javafx.fxml.FXML
-    private TableColumn VSLICarryOnBags;
+    private TableColumn<LuggageInfo, String> VSLIbagContentsColumn;
     @javafx.fxml.FXML
-    private TableColumn VSLIbagContentsColumn;
+    private TableColumn<LuggageInfo, Integer> VSLItotalBagsColumn;
     @javafx.fxml.FXML
-    private TableColumn VSLIluggageTypesColumn;
+    private TableColumn<LuggageInfo, Integer> VSLICarryOnBagsColumn;
     @javafx.fxml.FXML
-    private TableColumn VSLItotalBagsColumn;
+    private TableColumn<LuggageInfo, String> VSLIpassengerIDcolumn;
 
     @javafx.fxml.FXML
     public void initialize() {

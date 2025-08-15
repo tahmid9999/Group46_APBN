@@ -32,7 +32,7 @@ public class BoardingPassController
     public void generateBoardingPassButton(ActionEvent actionEvent) {
         Passenger p = SessionManager.getLoggedInPassenger();
         Alert a = new Alert(Alert.AlertType.WARNING);
-        if (p.getStatus().equals("Cancelled")){
+        if (p.getPassengerStatus().equals("Cancelled")){
             a.setContentText("Cancelled");
             a.showAndWait();
             return;

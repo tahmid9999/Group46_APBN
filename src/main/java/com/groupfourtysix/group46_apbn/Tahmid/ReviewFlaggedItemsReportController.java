@@ -12,11 +12,15 @@ import javafx.stage.Stage;
 public class ReviewFlaggedItemsReportController
 {
     @javafx.fxml.FXML
-    private TableColumn RFIRflagReasonColumn;
+    private TableColumn<Content, String> RFIRflagReasonColumn;
     @javafx.fxml.FXML
-    private TableView RFIRflaggedItemReasonTableview;
+    private TableView<Content> RFIRflaggedItemReasonTableview;
     @javafx.fxml.FXML
-    private TableColumn RFIRflaggedItemColumn;
+    private TableColumn<Content, String> RFIRflaggedItemColumn;
+    @javafx.fxml.FXML
+    private TableColumn<Content, String> RFIRluggageIDcolumn;
+    @javafx.fxml.FXML
+    private TableColumn<Content, String> RFIRpassengerIDcolumn;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -35,9 +39,5 @@ public class ReviewFlaggedItemsReportController
         catch(Exception e){
             //
         }
-    }
-
-    @javafx.fxml.FXML
-    public void RFIRexportButton(ActionEvent actionEvent) {
     }
 }

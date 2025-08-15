@@ -9,8 +9,9 @@
    <children>
       <TableView fx:id="FCtableview" layoutX="40.0" layoutY="34.0" prefHeight="231.0" prefWidth="520.0">
         <columns>
-          <TableColumn fx:id="FCflaggedItemColumn" prefWidth="75.0" text="Flagged Item" />
-          <TableColumn fx:id="FCstatusColumn" prefWidth="75.0" text="Status" />
+          <TableColumn fx:id="FCpassengerIDcolumn" prefWidth="116.00000762939453" text="Passenger ID" />
+          <TableColumn fx:id="FCflaggedItemColumn" prefWidth="264.7999267578125" text="Flagged Item" />
+            <TableColumn fx:id="FCstatusColumn" prefWidth="110.39999389648438" text="Status" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

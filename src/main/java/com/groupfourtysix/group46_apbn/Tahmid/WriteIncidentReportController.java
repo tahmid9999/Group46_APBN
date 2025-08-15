@@ -14,15 +14,17 @@ import javafx.stage.Stage;
 public class WriteIncidentReportController
 {
     @javafx.fxml.FXML
-    private TableColumn WIRflaggedItemColumn;
+    private TableColumn<Content, String> WIRflaggedItemColumn;
     @javafx.fxml.FXML
-    private TableView WIRtableview;
+    private TableView<Content> WIRtableview;
     @javafx.fxml.FXML
-    private TableColumn WIRstatusColumn;
+    private TableColumn<Content, String> WIRstatusColumn;
     @javafx.fxml.FXML
     private TextArea WIRtextarea;
     @javafx.fxml.FXML
     private Label WIRalertLabel;
+    @javafx.fxml.FXML
+    private TableColumn<Content, String> WIRpassengerIDcolumn;
 
     @javafx.fxml.FXML
     public void initialize() {

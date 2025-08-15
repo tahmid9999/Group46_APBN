@@ -15,9 +15,13 @@ public class DetainPassengerController
     @javafx.fxml.FXML
     private TableView DPtableview;
     @javafx.fxml.FXML
-    private TableColumn DPstatusColumn;
+    private TableColumn<Content, String> DPstatusColumn;
     @javafx.fxml.FXML
-    private TableColumn DPflaggedItemColumn;
+    private TableColumn<Content, String> DPflaggedItemColumn;
+    @javafx.fxml.FXML
+    private TableColumn<Passenger, String> DPpassengerIDcolumn;
+    @javafx.fxml.FXML
+    private TableColumn<Passenger, String> DPpassportNumberColumn;
 
     @javafx.fxml.FXML
     public void initialize() {

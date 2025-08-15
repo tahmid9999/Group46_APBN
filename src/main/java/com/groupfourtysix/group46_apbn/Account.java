@@ -9,11 +9,13 @@ public class Account implements Serializable {
     private String accountUserType;
     private String accountEmail;
     private String accountPassword;
+    private String accountID;
 
-    public Account(String accountUserType, String accountEmail, String accountPassword) {
+    public Account(String accountUserType, String accountEmail, String accountPassword, String accountID) {
         this.accountUserType = accountUserType;
         this.accountEmail = accountEmail;
         this.accountPassword = accountPassword;
+        this.accountID = accountID;
     }
 
     public String getAccountUserType() {
@@ -40,12 +42,21 @@ public class Account implements Serializable {
         this.accountPassword = accountPassword;
     }
 
+    public String getAccountID() {
+        return accountID;
+    }
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
     @Override
     public String toString() {
         return "Account{" +
                 "accountUserType='" + accountUserType + '\'' +
                 ", accountEmail='" + accountEmail + '\'' +
                 ", accountPassword='" + accountPassword + '\'' +
+                ", accountID='" + accountID + '\'' +
                 '}';
     }
 }

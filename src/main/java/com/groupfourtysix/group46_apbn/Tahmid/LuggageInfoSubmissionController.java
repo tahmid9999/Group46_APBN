@@ -5,7 +5,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -15,26 +14,33 @@ import java.util.ArrayList;
 public class LuggageInfoSubmissionController
 {
     @javafx.fxml.FXML
-    private CheckBox largeCheckbox;
-    @javafx.fxml.FXML
     private TextField numOfCarryOnBagsTextfield;
-    @javafx.fxml.FXML
-    private CheckBox mediumCheckbox;
     @javafx.fxml.FXML
     private TextField totalNumOfBagsTextfield;
     @javafx.fxml.FXML
     private Label vdVrLuggageInfoSubLabel;
     @javafx.fxml.FXML
-    private CheckBox oversizedCheckbox;
-    @javafx.fxml.FXML
-    private CheckBox smallCheckbox;
+    private TextField passengerIDLuggageInfo;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
     ArrayList<LuggageInfo> luggageInfoArrayList = new ArrayList<>();
-    ArrayList<String> luggageTypeArrayList = new ArrayList<>();
+
+    private String generateUniqueLuggageID() {
+        String prefix = "LID";
+        int Num = (int)(Math.random() * 90000) + 10000;
+        String psID = prefix + Num;
+
+        for (Passenger ps : Passenger.passengerArrayList) {
+            if (ps.getPassengerID().equals(psID)) {
+                return generateUniqueLuggageID(); // recursion
+            }
+        }
+
+        return psID;
+    }
 
     @javafx.fxml.FXML
     public void luggageInfoSubmitButton(ActionEvent actionEvent) {
@@ -62,31 +68,16 @@ public class LuggageInfoSubmissionController
             return;
         }
 
-        String luggageType;
-        if (smallCheckbox.isSelected()) {
-            luggageType = "Small";
-            luggageTypeArrayList.add(luggageType);
-        }
-        if (mediumCheckbox.isSelected()) {
-            luggageType = "Medium";
-            luggageTypeArrayList.add(luggageType);
-        }
-        if (largeCheckbox.isSelected()) {
-            luggageType = "Large";
-            luggageTypeArrayList.add(luggageType);
-        }
-        if (oversizedCheckbox.isSelected()) {
-            luggageType = "Oversized";
-            luggageTypeArrayList.add(luggageType);
-        }
 
         LuggageInfo lg = new LuggageInfo(
                 Integer.parseInt(totalNumOfBagsTextfield.getText()),
                 Integer.parseInt(numOfCarryOnBagsTextfield.getText()),
-                luggageTypeArrayList
+                generateUniqueLuggageID(),
+                passengerIDLuggageInfo.getText()
         );
 
-        luggageInfoArrayList.add(lg);
+        LuggageFileHandler.createFile(lg, "LuggageInfo.bin");
+//        luggageInfoArrayList.add(lg);
         vdVrLuggageInfoSubLabel.setText("Luggage Info has been submitted successfully");
 
     }

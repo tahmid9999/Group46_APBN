@@ -13,26 +13,22 @@ import javafx.stage.Stage;
 public class FinalReportController
 {
     @javafx.fxml.FXML
-    private ComboBox FRstatusFilterCombo;
+    private ComboBox<String> FRstatusFilterCombo;
     @javafx.fxml.FXML
-    private TableColumn FRpassengerStatusColumn;
+    private TableColumn<Passenger, String> FRpassengerStatusColumn;
     @javafx.fxml.FXML
     private TableColumn FRflagReasonColumn;
     @javafx.fxml.FXML
-    private TableColumn FRnameColumn;
+    private TableColumn<Passenger, String> FRnameColumn;
     @javafx.fxml.FXML
-    private TableColumn FRpassengerIDColumn;
+    private TableColumn<Passenger, String> FRpassengerIDColumn;
     @javafx.fxml.FXML
-    private TableColumn FRflightNumberColumn;
+    private TableColumn<Passenger, String> FRflightNumberColumn;
     @javafx.fxml.FXML
-    private TableView FRtableView;
+    private TableView<Passenger> FRtableView;
 
     @javafx.fxml.FXML
     public void initialize() {
-    }
-
-    @javafx.fxml.FXML
-    public void FRexportButton(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
@@ -48,5 +44,10 @@ public class FinalReportController
         catch(Exception e){
             //
         }
+    }
+
+    @javafx.fxml.FXML
+    public void FRfilterButton(ActionEvent actionEvent) {
+
     }
 }

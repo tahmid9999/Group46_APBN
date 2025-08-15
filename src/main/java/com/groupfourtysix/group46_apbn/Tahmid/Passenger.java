@@ -1,5 +1,7 @@
 package com.groupfourtysix.group46_apbn.Tahmid;
 
+import com.groupfourtysix.group46_apbn.Account;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -11,23 +13,30 @@ public class Passenger implements Serializable {
     private String nationality;
     private String passengerID;
     private String flightNumber;
-    private LuggageInfo luggageInfo;
-    private String status;
+    private String passengerStatus;
     private String boardingPassID;
     private String user;
     private String emailAddress;
     private String password;
-    private String flagReason;
+    private String PassengerFlagReason;
+    private String passengerAccountID;
 
     public static ArrayList<Passenger> passengerArrayList = new ArrayList<>();
 
-    public Passenger(String name, LocalDate dateOfBirth, String passportNumber, String nationality, String passengerID, String flightNumber) {
+    public Passenger(String name, LocalDate dateOfBirth, String passportNumber, String nationality, String passengerID, String flightNumber, String passengerStatus, String boardingPassID, String user, String emailAddress, String password, String passengerFlagReason, String passengerAccountID) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.passportNumber = passportNumber;
         this.nationality = nationality;
         this.passengerID = passengerID;
         this.flightNumber = flightNumber;
+        this.passengerStatus = passengerStatus;
+        this.boardingPassID = boardingPassID;
+        this.user = user;
+        this.emailAddress = emailAddress;
+        this.password = password;
+        PassengerFlagReason = passengerFlagReason;
+        this.passengerAccountID = passengerAccountID;
     }
 
     public String getName() {
@@ -78,20 +87,12 @@ public class Passenger implements Serializable {
         this.flightNumber = flightNumber;
     }
 
-    public LuggageInfo getLuggageInfo() {
-        return luggageInfo;
+    public String getPassengerStatus() {
+        return passengerStatus;
     }
 
-    public void setLuggageInfo(LuggageInfo luggageInfo) {
-        this.luggageInfo = luggageInfo;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
+    public void setPassengerStatus(String passengerStatus) {
+        this.passengerStatus = passengerStatus;
     }
 
     public String getBoardingPassID() {
@@ -126,12 +127,20 @@ public class Passenger implements Serializable {
         this.password = password;
     }
 
-    public String getFlagReason() {
-        return flagReason;
+    public String getPassengerFlagReason() {
+        return PassengerFlagReason;
     }
 
-    public void setFlagReason(String flagReason) {
-        this.flagReason = flagReason;
+    public void setPassengerFlagReason(String passengerFlagReason) {
+        PassengerFlagReason = passengerFlagReason;
+    }
+
+    public String getPassengerAccountID() {
+        return passengerAccountID;
+    }
+
+    public void setPassengerAccountID(String passengerAccountID) {
+        this.passengerAccountID = passengerAccountID;
     }
 
     @Override
@@ -143,12 +152,13 @@ public class Passenger implements Serializable {
                 ", nationality='" + nationality + '\'' +
                 ", passengerID='" + passengerID + '\'' +
                 ", flightNumber='" + flightNumber + '\'' +
-                ", luggageInfo=" + luggageInfo +
-                ", status='" + status + '\'' +
+                ", passengerStatus='" + passengerStatus + '\'' +
                 ", boardingPassID='" + boardingPassID + '\'' +
                 ", user='" + user + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +
                 ", password='" + password + '\'' +
+                ", PassengerFlagReason='" + PassengerFlagReason + '\'' +
+                ", passengerAccountID='" + passengerAccountID + '\'' +
                 '}';
     }
 }

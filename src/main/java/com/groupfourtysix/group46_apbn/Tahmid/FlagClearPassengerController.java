@@ -19,6 +19,8 @@ public class FlagClearPassengerController
     private TableColumn<Content, String> FCstatusColumn;
     @javafx.fxml.FXML
     private TableView<Content> FCtableview;
+    @javafx.fxml.FXML
+    private TableColumn<Content, String> FCpassengerIDcolumn;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -50,23 +52,23 @@ public class FlagClearPassengerController
 
     @javafx.fxml.FXML
     public void FCflagAsSuspiciousButton(ActionEvent actionEvent) {
-        Content selectedSlot = FCtableview.getSelectionModel().getSelectedItem();
-        if (selectedSlot != null) {
-            Content updatedSlot = new Content(selectedSlot.getItemName(), selectedSlot.getFlagReason(), selectedSlot.getItemDetails(), "Flagged");
-
-            FCtableview.getItems().remove(selectedSlot);
-            FCtableview.getItems().add(updatedSlot);
-        }
+//        Content selectedSlot = FCtableview.getSelectionModel().getSelectedItem();
+//        if (selectedSlot != null) {
+//            Content updatedSlot = new Content(selectedSlot.getItemName(), selectedSlot.getFlagReason(), selectedSlot.getItemDetails(), "Flagged");
+//
+//            FCtableview.getItems().remove(selectedSlot);
+//            FCtableview.getItems().add(updatedSlot);
+//        }
     }
 
     @javafx.fxml.FXML
     public void FCclearButton(ActionEvent actionEvent) {
-        Content selectedSlot = FCtableview.getSelectionModel().getSelectedItem();
-        if (selectedSlot != null) {
-            Content updatedSlot = new Content(selectedSlot.getItemName(), selectedSlot.getFlagReason(), selectedSlot.getItemDetails(), "Cleared");
-
-            FCtableview.getItems().remove(selectedSlot);
-            FCtableview.getItems().add(updatedSlot);
-        }
+//        Content selectedSlot = FCtableview.getSelectionModel().getSelectedItem();
+//        if (selectedSlot != null) {
+//            Content updatedSlot = new Content(selectedSlot.getItemName(), selectedSlot.getFlagReason(), selectedSlot.getItemDetails(), "Cleared");
+//
+//            FCtableview.getItems().remove(selectedSlot);
+//            FCtableview.getItems().add(updatedSlot);
+//        }
     }
 }

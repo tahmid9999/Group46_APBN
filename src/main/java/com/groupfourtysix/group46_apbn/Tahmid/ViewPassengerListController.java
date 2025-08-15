@@ -9,19 +9,23 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
+import java.time.LocalDate;
+
 public class ViewPassengerListController
 {
 
     @javafx.fxml.FXML
     private TableColumn VPLageColumn;
     @javafx.fxml.FXML
-    private TableColumn VPLnameColumn;
+    private TableColumn<Passenger, String> VPLnameColumn;
     @javafx.fxml.FXML
-    private TableColumn VPLpassportNumberColumn;
+    private TableColumn<Passenger, String> VPLpassportNumberColumn;
     @javafx.fxml.FXML
-    private TableColumn VPLnationalityColumn;
+    private TableColumn<Passenger, String> VPLnationalityColumn;
     @javafx.fxml.FXML
-    private TableView VPLtableview;
+    private TableView<Passenger> VPLtableview;
+    @javafx.fxml.FXML
+    private TableColumn<Passenger, String> VPLpassengerIDColumn;
 
     @javafx.fxml.FXML
     public void initialize() {

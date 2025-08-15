@@ -1,10 +1,11 @@
-package com.groupfourtysix.group46_apbn;
+package com.groupfourtysix.group46_apbn.Tahmid;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
-public class AccountFileHandler extends ObjectOutputStream{
-    public AccountFileHandler(OutputStream out) throws IOException{
+public class LuggageFileHandler extends ObjectOutputStream {
+    public LuggageFileHandler(OutputStream out) throws IOException{
         super(out);
     }
 
@@ -20,7 +21,7 @@ public class AccountFileHandler extends ObjectOutputStream{
             if (f.exists()){
                 fos = new FileOutputStream(f, true);
 //                Changing statement
-                oos = new AccountFileHandler(fos);
+                oos = new LuggageFileHandler(fos);
             }else {
                 fos = new FileOutputStream(f);
                 oos = new ObjectOutputStream(fos);
@@ -34,25 +35,39 @@ public class AccountFileHandler extends ObjectOutputStream{
         }
     }
 
-    public static ArrayList<Account> readFile(String filename){
-        ArrayList<Account> accounts = new ArrayList<>();
+    public static List<LuggageInfo> readFile(String filename){
+        List<LuggageInfo> luggageInfos = new ArrayList<>();
         try{
             FileInputStream fis = new FileInputStream(filename);
             ObjectInputStream ois = new ObjectInputStream(fis);
 
             while (true){
                 try{
-                    Account obj =(Account) ois.readObject();
-                    accounts.add(obj);
+                    LuggageInfo obj =(LuggageInfo) ois.readObject();
+                    luggageInfos.add(obj);
                 } catch (EOFException e) {
                     break;
                 }
             }
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException  e) {
             System.out.println("File does not exist: " + filename);
         }catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return accounts;
+        return luggageInfos;
+    }
+
+    // Write updated list of flights to file
+    public static void writeFile(List<LuggageInfo> luggageInfos, String filename) {
+        try (FileOutputStream fos = new FileOutputStream(filename);
+             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+
+            for (LuggageInfo f : luggageInfos) {
+                oos.writeObject(f);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

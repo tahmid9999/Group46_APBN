@@ -1,19 +1,19 @@
 package com.groupfourtysix.group46_apbn.Tahmid;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class LuggageInfo {
+public class LuggageInfo implements Serializable{
     private int totalNumOfBags;
     private int numOfCarryOnBags;
-    private ArrayList luggageTypes;
+    private String luggageID;
+    private String passengerID;
 
-    public LuggageInfo(int totalNumOfBags, int numOfCarryOnBags, ArrayList luggageTypes) {
+    public LuggageInfo(int totalNumOfBags, int numOfCarryOnBags, String luggageID, String passengerID) {
         this.totalNumOfBags = totalNumOfBags;
         this.numOfCarryOnBags = numOfCarryOnBags;
-        this.luggageTypes = luggageTypes;
-    }
-
-    public LuggageInfo() {
+        this.luggageID = luggageID;
+        this.passengerID = passengerID;
     }
 
     public int getTotalNumOfBags() {
@@ -32,12 +32,20 @@ public class LuggageInfo {
         this.numOfCarryOnBags = numOfCarryOnBags;
     }
 
-    public ArrayList getLuggageTypes() {
-        return luggageTypes;
+    public String getLuggageID() {
+        return luggageID;
     }
 
-    public void setLuggageTypes(ArrayList luggageTypes) {
-        this.luggageTypes = luggageTypes;
+    public void setLuggageID(String luggageID) {
+        this.luggageID = luggageID;
+    }
+
+    public String getPassengerID() {
+        return passengerID;
+    }
+
+    public void setPassengerID(String passengerID) {
+        this.passengerID = passengerID;
     }
 
     @Override
@@ -45,7 +53,8 @@ public class LuggageInfo {
         return "LuggageInfo{" +
                 "totalNumOfBags=" + totalNumOfBags +
                 ", numOfCarryOnBags=" + numOfCarryOnBags +
-                ", luggageTypes=" + luggageTypes +
+                ", luggageID='" + luggageID + '\'' +
+                ", passengerID='" + passengerID + '\'' +
                 '}';
     }
 }
