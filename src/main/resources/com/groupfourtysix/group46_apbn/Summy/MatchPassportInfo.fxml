@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="515.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Summy.MatchPassportInfo">
+   <children>
+      <Label layoutX="210.0" layoutY="28.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-effect: dropshadow(gaussian, lightgray, 3, 0, 1, 1);" text="Check Passport Information" />
+      <TableView fx:id="EditListpassengerTable" layoutX="25.0" layoutY="87.0" prefHeight="300" prefWidth="684.0" style="-fx-border-color: #95a5a6;">
+         <columns>
+            <TableColumn fx:id="colCheckPassengerName" prefWidth="249.59992599487305" text="Passenger Name" />
+            <TableColumn fx:id="CoardingPassCol" prefWidth="190.40003967285156" text="Boarding Pass No." />
+            <TableColumn fx:id="passNumCol" prefWidth="239.99993896484375" text="Passport Number" />
+         </columns>
+      </TableView>
+      <TextField fx:id="PassportnumTF" layoutX="192.0" layoutY="412.0" promptText="Passport No," style="-fx-background-color: white; -fx-border-color: #27ae60;" />
+      <Label layoutX="65.0" layoutY="417.0" style="-fx-font-weight: bold; -fx-text-fill: #34495e;" text="Passport Number" />
+      <Button fx:id="CheckStatusBTN" layoutX="367.0" layoutY="413.0" onAction="#UpdatetheStatus" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;" text="Check Status" />
+      <Button fx:id="closeandbackbtn" layoutX="318.0" layoutY="461.0" mnemonicParsing="false" onAction="#closeandGoback" text="Okay and Close" />
+   </children>
+</AnchorPane>

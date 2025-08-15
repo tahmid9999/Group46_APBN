@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="498.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Summy.SusBagList">
+   <children>
+      <Text fill="#3303a3" layoutX="195.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suspicious Baggage Report">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Text>
+      <TableView fx:id="susBagTable" layoutX="40.0" layoutY="99.0" prefHeight="300.0" prefWidth="700.0">
+         <columns>
+            <TableColumn fx:id="PassengerIDCol" prefWidth="140" text="PassengerID" />
+            <TableColumn fx:id="LuggageIDCol" prefWidth="154.4000244140625" text="Luggage ID" />
+            <TableColumn fx:id="flaggedCol" prefWidth="125.5999755859375" text="Flagged" />
+            <TableColumn fx:id="TotalBagsCol" prefWidth="172.79998779296875" text="Total Bags" />
+            <TableColumn fx:id="DetailsCol" prefWidth="167.2000732421875" text="Details" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnClose" layoutX="274.0" layoutY="440.0" onAction="#closeWindow" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Close" />
+      <Text layoutX="40.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search for Specific Passenger" />
+      <Button fx:id="Searchbtn" layoutX="201.0" layoutY="440.0" mnemonicParsing="false" onAction="#SearchinTable" text="Search" />
+      <TextField fx:id="PassengerIDField" layoutX="201.0" layoutY="405.0" prefHeight="26.0" prefWidth="157.0" />
+   </children>
+</AnchorPane>
