@@ -3,14 +3,9 @@ package com.groupfourtysix.group46_apbn;
 import com.groupfourtysix.group46_apbn.Tahmid.AppendableObjectOutputStream;
 import com.groupfourtysix.group46_apbn.Tahmid.Passenger;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import javax.imageio.IIOException;
 import java.io.*;
@@ -33,54 +28,70 @@ public class CreateAccountController
     @javafx.fxml.FXML
     public void initialize() {
         CNAuserComboInput.getItems().addAll("Passenger", "APBN Screening Officer", "Airport check-in staff", "Security Scanner Operator", "Baggage Handler", "Boarding Gate Officer", "Flight Scheduler", "Incident Logger");
-//        List<Account> accounts = AccountFileHandler.readFile("AccountInfo.bin");
-//        for (Account ac: accounts) {
-//            System.out.println(ac);
+
+        //read file
+//        File file = new File("passengerAccountInfo.bin");
+//
+//        if (!file.exists()) {
+//            return;
+//        }
+//
+//        FileInputStream fis = new FileInputStream(file);
+//        ObjectInputStream ois = new ObjectInputStream(fis);
+//
+//        try{
+//            while (true){
+//                Account account = (Account) ois.readObject();
+//                Account.accountPassengerArrayList.add(account);
+//            }
+//        } catch (EOFException eof){
+//            System.out.println("End of file reached");
+//        } catch (ClassNotFoundException cnf) {
+//            System.out.println("Class not found");
 //        }
     }
 
-    public void showAlert(String message){
-        Alert a = new Alert(Alert.AlertType.INFORMATION);
-        a.setContentText(message);
-        a.showAndWait();
-    }
+
 
     @javafx.fxml.FXML
     public void createNewAccountButton(ActionEvent actionEvent) {
         if (CNAuserComboInput.getValue() == null) {
             CNAalertsLabel.setText("Please select user type.");
-            return;
         }
-//
+
         if(CNAemailAdressTextfield.getText().trim().isEmpty()) {
-            CNAalertsLabel.setText("Your email address can't be empty.");
+            CNAalertsLabel.setText("Please enter your email address properly.");
             return;
         }
 
-        boolean atSignFound = false;
         for (int i = 0; i < CNAemailAdressTextfield.getText().length(); i++) {
+            boolean atSignFound;
             if (CNAemailAdressTextfield.getText().charAt(i) == '@') {
                 atSignFound = true;
             }
-        }
-        if (atSignFound == false) {
-            CNAalertsLabel.setText("Email address must include @ sign.");
-            return;
+            else {
+                atSignFound = false;
+                return;
+            }
         }
 
-        boolean dotFound = false;
         for (int i = 0; i < CNAemailAdressTextfield.getText().length(); i++) {
+            boolean dotFound;
             if (CNAemailAdressTextfield.getText().charAt(i) == '.') {
                 dotFound = true;
             }
+            else {
+                dotFound = false;
+                return;
+            }
         }
-        if (dotFound == false) {
-            CNAalertsLabel.setText("Email address must include .(dot) sign.");
-            return;
+
+        for (Account ac: accountArrayList) {
+            System.out.println(ac);
         }
 
         if(CNApasswordTextfield.getText().trim().isEmpty()) {
-            CNAalertsLabel.setText("Your password can't be empty.");
+            CNAalertsLabel.setText("Please enter your password properly.");
             return;
         }
 
@@ -92,39 +103,32 @@ public class CreateAccountController
         Account ac = new Account(
                 CNAuserComboInput.getValue(),
                 CNAemailAdressTextfield.getText(),
-                CNApasswordTextfield.getText(),
-                UniqueID.generateID()
+                CNApasswordTextfield.getText()
         );
 
         //Write
         AccountFileHandler.createFile(ac, "AccountInfo.bin");
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login.fxml"));
-            Scene nextScene = new Scene(fxmlLoader.load());
-            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Hello!");
-            nextStage.setScene(nextScene);
-            nextStage.show();
-        }
-        catch(Exception e){
-            //
-        }
-        showAlert("Your account has been created successfully. You can now log in.");
-        System.out.println(ac);
-    }
 
-    @javafx.fxml.FXML
-    public void backButton(ActionEvent actionEvent) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login.fxml"));
-            Scene nextScene = new Scene(fxmlLoader.load());
-            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Hello!");
-            nextStage.setScene(nextScene);
-            nextStage.show();
-        }
-        catch(Exception e){
-            //
-        }
+        //write file
+//        File file = new File("AccountInfo.bin");
+//        FileOutputStream fos;
+//        ObjectOutputStream oos;
+//
+//        if (file.exists()) {
+//            fos = new FileOutputStream(file, true);
+//            oos = new AppendableObjectOutputStream(fos);
+//        } else {
+//            fos = new FileOutputStream(file, true);
+//            oos = new ObjectOutputStream(fos);
+//        }
+//
+//        oos.writeObject(psAC);
+//        oos.close();
+//
+//        Account.accountPassengerArrayList.add(psAC);
+//        CNAalertsLabel.setText("Account has been created successfully");
+
+//        ArrayList<> accountArrayList = Login.accountPassengerArrayList;
+
     }
 }
