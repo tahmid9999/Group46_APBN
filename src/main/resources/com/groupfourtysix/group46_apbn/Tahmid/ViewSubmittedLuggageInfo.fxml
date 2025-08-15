@@ -14,7 +14,6 @@
           <TableColumn fx:id="VSLIpassengerIDcolumn" prefWidth="81.5999755859375" text="PassengerID" />
           <TableColumn fx:id="VSLItotalBagsColumn" prefWidth="128.0" text="Total number of bags" />
             <TableColumn fx:id="VSLICarryOnBagsColumn" prefWidth="151.99993896484375" text="Number of carry-on bags" />
-            <TableColumn fx:id="VSLIbagContentsColumn" prefWidth="162.4000244140625" text="Bag Contents" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

@@ -23,9 +23,14 @@ public class BoardingPassController
     private Label passengerNameLabel;
     @javafx.fxml.FXML
     private Label statusLabel;
+    private Passenger passenger = SessionManager.getLoggedInPassenger();
 
     @javafx.fxml.FXML
     public void initialize() {
+        passengerNameLabel.setText(passenger.getName());
+        passengerIdLabel.setText(passenger.getPassengerID());
+        flightNoLabel.setText(passenger.getFlightNumber());
+        statusLabel.setText(passenger.getPassengerStatus());
     }
 
     @javafx.fxml.FXML
@@ -33,11 +38,11 @@ public class BoardingPassController
         Passenger p = SessionManager.getLoggedInPassenger();
         Alert a = new Alert(Alert.AlertType.WARNING);
         if (p.getPassengerStatus().equals("Cancelled")){
-            a.setContentText("Cancelled");
+            a.setContentText("Cancelled. You can't generate Boarding Pass ID.");
             a.showAndWait();
             return;
         } else {
-            a.setContentText("Approved");
+            a.setContentText("Boarding Pass ID has been generated successfully.");
             a.showAndWait();
         }
     }

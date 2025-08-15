@@ -14,7 +14,5 @@
         <Button layoutX="230.0" layoutY="283.0" mnemonicParsing="false" onAction="#luggageInfoSubmitButton" prefHeight="26.0" prefWidth="113.0" text="Submit" />
         <Label fx:id="vdVrLuggageInfoSubLabel" alignment="CENTER" layoutX="82.0" layoutY="229.0" prefHeight="34.0" prefWidth="436.0" style="-fx-border-color: black;" />
       <Button layoutX="38.0" layoutY="336.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
-      <TextField fx:id="passengerIDLuggageInfo" layoutX="211.0" layoutY="48.0" />
-      <Label layoutX="38.0" layoutY="52.0" text="Passenger ID:" />
     </children>
 </AnchorPane>

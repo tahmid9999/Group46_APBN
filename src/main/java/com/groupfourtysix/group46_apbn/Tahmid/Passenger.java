@@ -9,33 +9,49 @@ import java.util.ArrayList;
 public class Passenger implements Serializable {
     private String name;
     private LocalDate dateOfBirth;
+    private int age;
     private String passportNumber;
     private String nationality;
     private String passengerID;
     private String flightNumber;
     private String passengerStatus;
+    private String scanStatus;
+    private String luggageStatus;
+    private String luggageID;
+    private int totalNumOfBags;
+    private int numOfCarryOnBags;
+    private String Items;
+    private String FlagReason;
+    private String IncidentReport;
     private String boardingPassID;
     private String user;
     private String emailAddress;
     private String password;
-    private String PassengerFlagReason;
     private String passengerAccountID;
 
     public static ArrayList<Passenger> passengerArrayList = new ArrayList<>();
 
-    public Passenger(String name, LocalDate dateOfBirth, String passportNumber, String nationality, String passengerID, String flightNumber, String passengerStatus, String boardingPassID, String user, String emailAddress, String password, String passengerFlagReason, String passengerAccountID) {
+    public Passenger(String name, LocalDate dateOfBirth, int age, String passportNumber, String nationality, String passengerID, String flightNumber, String passengerStatus, String scanStatus, String luggageStatus, String luggageID, int totalNumOfBags, int numOfCarryOnBags, String items, String flagReason, String incidentReport, String boardingPassID, String user, String emailAddress, String password, String passengerAccountID) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
+        this.age = age;
         this.passportNumber = passportNumber;
         this.nationality = nationality;
         this.passengerID = passengerID;
         this.flightNumber = flightNumber;
         this.passengerStatus = passengerStatus;
+        this.scanStatus = scanStatus;
+        this.luggageStatus = luggageStatus;
+        this.luggageID = luggageID;
+        this.totalNumOfBags = totalNumOfBags;
+        this.numOfCarryOnBags = numOfCarryOnBags;
+        Items = items;
+        FlagReason = flagReason;
+        IncidentReport = incidentReport;
         this.boardingPassID = boardingPassID;
         this.user = user;
         this.emailAddress = emailAddress;
         this.password = password;
-        PassengerFlagReason = passengerFlagReason;
         this.passengerAccountID = passengerAccountID;
     }
 
@@ -53,6 +69,14 @@ public class Passenger implements Serializable {
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getPassportNumber() {
@@ -95,6 +119,70 @@ public class Passenger implements Serializable {
         this.passengerStatus = passengerStatus;
     }
 
+    public String getScanStatus() {
+        return scanStatus;
+    }
+
+    public void setScanStatus(String scanStatus) {
+        this.scanStatus = scanStatus;
+    }
+
+    public String getLuggageStatus() {
+        return luggageStatus;
+    }
+
+    public void setLuggageStatus(String luggageStatus) {
+        this.luggageStatus = luggageStatus;
+    }
+
+    public String getLuggageID() {
+        return luggageID;
+    }
+
+    public void setLuggageID(String luggageID) {
+        this.luggageID = luggageID;
+    }
+
+    public int getTotalNumOfBags() {
+        return totalNumOfBags;
+    }
+
+    public void setTotalNumOfBags(int totalNumOfBags) {
+        this.totalNumOfBags = totalNumOfBags;
+    }
+
+    public int getNumOfCarryOnBags() {
+        return numOfCarryOnBags;
+    }
+
+    public void setNumOfCarryOnBags(int numOfCarryOnBags) {
+        this.numOfCarryOnBags = numOfCarryOnBags;
+    }
+
+    public String getItems() {
+        return Items;
+    }
+
+    public void setItems(String items) {
+        Items = items;
+    }
+
+    public String getFlagReason() {
+        return FlagReason;
+    }
+
+    public void setFlagReason(String flagReason) {
+        FlagReason = flagReason;
+    }
+
+    public String getIncidentReport() {
+        return IncidentReport;
+    }
+
+    public void setIncidentReport(String incidentReport) {
+        IncidentReport = incidentReport;
+    }
+
     public String getBoardingPassID() {
         return boardingPassID;
     }
@@ -127,14 +215,6 @@ public class Passenger implements Serializable {
         this.password = password;
     }
 
-    public String getPassengerFlagReason() {
-        return PassengerFlagReason;
-    }
-
-    public void setPassengerFlagReason(String passengerFlagReason) {
-        PassengerFlagReason = passengerFlagReason;
-    }
-
     public String getPassengerAccountID() {
         return passengerAccountID;
     }
@@ -148,16 +228,24 @@ public class Passenger implements Serializable {
         return "Passenger{" +
                 "name='" + name + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
+                ", age=" + age +
                 ", passportNumber='" + passportNumber + '\'' +
                 ", nationality='" + nationality + '\'' +
                 ", passengerID='" + passengerID + '\'' +
                 ", flightNumber='" + flightNumber + '\'' +
                 ", passengerStatus='" + passengerStatus + '\'' +
+                ", scanStatus='" + scanStatus + '\'' +
+                ", luggageStatus='" + luggageStatus + '\'' +
+                ", luggageID='" + luggageID + '\'' +
+                ", totalNumOfBags=" + totalNumOfBags +
+                ", numOfCarryOnBags=" + numOfCarryOnBags +
+                ", Items='" + Items + '\'' +
+                ", FlagReason='" + FlagReason + '\'' +
+                ", IncidentReport='" + IncidentReport + '\'' +
                 ", boardingPassID='" + boardingPassID + '\'' +
                 ", user='" + user + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +
                 ", password='" + password + '\'' +
-                ", PassengerFlagReason='" + PassengerFlagReason + '\'' +
                 ", passengerAccountID='" + passengerAccountID + '\'' +
                 '}';
     }

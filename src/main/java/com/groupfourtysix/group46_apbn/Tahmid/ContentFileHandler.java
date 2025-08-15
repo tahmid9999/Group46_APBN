@@ -4,8 +4,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PassengerFileHandler extends ObjectOutputStream {
-    public PassengerFileHandler(OutputStream out) throws IOException{
+public class ContentFileHandler extends ObjectOutputStream {
+    public ContentFileHandler(OutputStream out) throws IOException{
         super(out);
     }
 
@@ -21,7 +21,7 @@ public class PassengerFileHandler extends ObjectOutputStream {
             if (f.exists()){
                 fos = new FileOutputStream(f, true);
 //                Changing statement
-                oos = new PassengerFileHandler(fos);
+                oos = new ContentFileHandler(fos);
             }else {
                 fos = new FileOutputStream(f);
                 oos = new ObjectOutputStream(fos);
@@ -35,16 +35,16 @@ public class PassengerFileHandler extends ObjectOutputStream {
         }
     }
 
-    public static List<Passenger> readFile(String filename){
-        List<Passenger> passengers = new ArrayList<>();
+    public static List<Content> readFile(String filename){
+        List<Content> contents = new ArrayList<>();
         try{
             FileInputStream fis = new FileInputStream(filename);
             ObjectInputStream ois = new ObjectInputStream(fis);
 
             while (true){
                 try{
-                    Passenger obj =(Passenger) ois.readObject();
-                    passengers.add(obj);
+                    Content obj =(Content) ois.readObject();
+                    contents.add(obj);
                 } catch (EOFException e) {
                     break;
                 }
@@ -54,15 +54,15 @@ public class PassengerFileHandler extends ObjectOutputStream {
         }catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return passengers;
+        return contents;
     }
 
     // Write updated list of flights to file
-    public static void writeFile(List<Passenger> passengers, String filename) {
+    public static void writeFile(List<Content> contents, String filename) {
         try (FileOutputStream fos = new FileOutputStream(filename);
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 
-            for (Passenger f : passengers) {
+            for (Content f : contents) {
                 oos.writeObject(f);
             }
 

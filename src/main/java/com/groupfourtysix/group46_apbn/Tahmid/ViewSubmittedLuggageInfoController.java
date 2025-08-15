@@ -15,8 +15,6 @@ public class ViewSubmittedLuggageInfoController
     @javafx.fxml.FXML
     private TableView<LuggageInfo> VSLItableview;
     @javafx.fxml.FXML
-    private TableColumn<LuggageInfo, String> VSLIbagContentsColumn;
-    @javafx.fxml.FXML
     private TableColumn<LuggageInfo, Integer> VSLItotalBagsColumn;
     @javafx.fxml.FXML
     private TableColumn<LuggageInfo, Integer> VSLICarryOnBagsColumn;

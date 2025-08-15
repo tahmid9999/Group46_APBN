@@ -13,13 +13,13 @@ public class ScanResultController
 {
 
     @javafx.fxml.FXML
-    private TableColumn SRdetailsColumn;
-    @javafx.fxml.FXML
-    private TableColumn SRcontentColumn;
-    @javafx.fxml.FXML
     private TableColumn SRstatusColumn;
     @javafx.fxml.FXML
     private TableView SRTableView;
+    @javafx.fxml.FXML
+    private TableColumn SRitemColumn;
+    @javafx.fxml.FXML
+    private TableColumn SRflagReasonColumn;
 
     @javafx.fxml.FXML
     public void initialize() {

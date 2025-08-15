@@ -11,7 +11,7 @@
         <Label layoutX="73.0" layoutY="107.0" text="Passport Number:" />
         <Label layoutX="73.0" layoutY="137.0" text="Nationality:" />
         <Label layoutX="71.0" layoutY="183.0" text="Luggage Status:" />
-        <Label layoutX="71.0" layoutY="210.0" text="Security Clearance:" />
+        <Label layoutX="71.0" layoutY="210.0" text="Security Status:" />
         <Label fx:id="nameLabel" alignment="CENTER" layoutX="187.0" layoutY="46.0" prefHeight="18.0" prefWidth="246.0" />
         <Label fx:id="dateOfBirthLabel" alignment="CENTER" layoutX="187.0" layoutY="74.0" prefHeight="18.0" prefWidth="246.0" />
         <Label fx:id="passportNumberLabel" alignment="CENTER" layoutX="187.0" layoutY="107.0" prefHeight="18.0" prefWidth="246.0" />
