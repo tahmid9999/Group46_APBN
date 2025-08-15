@@ -74,6 +74,31 @@ public class LoginController
         ArrayList<Account> accountsArrayList = AccountFileHandler.readFile("AccountInfo.bin");
         for (Account acs: accountsArrayList) {
             if (userComboInput.getValue().equals(acs.getAccountUserType()) && emailAdressTextfield.getText().equals(acs.getAccountEmail()) && passwordTextfield.getText().equals(acs.getAccountPassword())) {
+                if (userComboInput.getValue().equals("Passenger")) {
+                    try {
+                        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/PassengerDashboard.fxml"));
+                        Scene nextScene = new Scene(fxmlLoader.load());
+                        Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+                        nextStage.setTitle("Passenger Dashboard");
+                        nextStage.setScene(nextScene);
+                        nextStage.show();
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                }
+
+                if (userComboInput.getValue().equals("APBN Screening Officer")) {
+                    try {
+                        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/APBNScreeningOfficerDashboard.fxml"));
+                        Scene nextScene = new Scene(fxmlLoader.load());
+                        Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+                        nextStage.setTitle("APBN Screening Officer");
+                        nextStage.setScene(nextScene);
+                        nextStage.show();
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                }
 
             }
         }
