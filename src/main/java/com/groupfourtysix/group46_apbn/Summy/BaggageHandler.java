@@ -2,6 +2,7 @@ package com.groupfourtysix.group46_apbn.Summy;
 
 
 import com.groupfourtysix.group46_apbn.Tahmid.Passenger;
+import com.groupfourtysix.group46_apbn.Tahmid.PassengerFileHandler;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -19,63 +20,54 @@ public class BaggageHandler extends ObjectOutputStream {
         reset();
     }
 
-    public static void createFile(String[] data, String filename) {
+    public static void saveBaggage(BaggageModel baggage, String filename) {
         try {
             File f = new File(filename);
-            FileOutputStream fos;
+            FileOutputStream fos = new FileOutputStream(f, true);
             ObjectOutputStream oos;
 
             if (f.exists()) {
-                fos = new FileOutputStream(f, true);
                 oos = new BaggageHandler(fos); //
             } else {
-                fos = new FileOutputStream(f);
                 oos = new ObjectOutputStream(fos);
             }
 
-            oos.writeObject(data);
+            oos.writeObject(baggage);
             oos.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public static List<String[]> readFile(String filename) {
-        List<String[]> records = new ArrayList<>();
+    public static ArrayList<BaggageModel> readBaggage(String filename) {
+        ArrayList<BaggageModel> list = new ArrayList<>();
         File f = new File(filename);
+        if (!f.exists()) return list;
 
-        if (!f.exists()) {
-            return records;
-        }
-
-        try (FileInputStream fis = new FileInputStream(f);
-             ObjectInputStream ois = new ObjectInputStream(fis)) {
-
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))) {
             while (true) {
                 try {
                     Object obj = ois.readObject();
-                    if (obj instanceof String[]) {
-                        records.add((String[]) obj);
+                    if (obj instanceof BaggageModel) {
+                        list.add((BaggageModel) obj);
                     }
                 } catch (EOFException eof) {
-                    break;
+                    break; // End of file reached
                 }
             }
-
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        return records;
+        return list;
     }
 
 
 
 
-    public static Passenger findPassengerById(String passengerID) {
-        for (Passenger p : Passenger.passengerArrayList) {
-            if (p.getPassengerID().equals(passengerID)) {
-                return p;
-            }
+    public static Passenger readPassengerInfo(String passengerID, String filename) {
+        List<Passenger> passengers = PassengerFileHandler.readFile(filename);
+        for (Passenger p : passengers) {
+            if (p.getPassengerID().equals(passengerID)) return p;
         }
         return null;
     }

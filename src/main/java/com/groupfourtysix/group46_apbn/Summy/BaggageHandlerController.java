@@ -1,11 +1,12 @@
 package com.groupfourtysix.group46_apbn.Summy;
 
-import com.groupfourtysix.group46_apbn.Tahmid.LuggageInfo;
+
 import com.groupfourtysix.group46_apbn.Tahmid.Passenger;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -242,10 +243,42 @@ public class BaggageHandlerController
 
     @javafx.fxml.FXML
     public void opendownloadreport(ActionEvent actionEvent) {
+
+        try{
+            javafx.fxml.FXMLLoader fxmlLoader = new javafx.fxml.FXMLLoader(getClass().getResource("/com/groupfourtysix/group46_apbn/Summy/GenerateDailyReport.fxml"));
+            javafx.scene.Parent root = fxmlLoader.load();
+            javafx.scene.Scene scene = new javafx.scene.Scene(root);
+            javafx.stage.Stage stage = new javafx.stage.Stage();
+            stage.setTitle("Daily Report");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            confirmationLabel.setText("Failed to open report view.");
+            confirmationLabel.setVisible(true);
+        }
+
+
+
+
     }
 
     @javafx.fxml.FXML
     public void openEditBaggageView(ActionEvent actionEvent) {
+
+        try {
+            javafx.fxml.FXMLLoader fxmlLoader = new javafx.fxml.FXMLLoader(getClass().getResource("/com/groupfourtysix/group46_apbn/Summy/EditBaggageView.fxml"));
+            javafx.scene.Parent root = fxmlLoader.load();
+            javafx.scene.Scene scene = new javafx.scene.Scene(root);
+            javafx.stage.Stage stage = new javafx.stage.Stage();
+            stage.setTitle("Edit Baggage");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            confirmationLabel.setText("Failed to open Edit Baggage view.");
+            confirmationLabel.setVisible(true);
+        }
     }
 
     @javafx.fxml.FXML
@@ -260,7 +293,7 @@ public class BaggageHandlerController
         if (isInputInvalid(passengerID, totalBags, flag, firstWeightText, secondWeightText, issueDescription)) {
             return;
         }
-        Passenger foundPassenger = findPassengerById(passengerID);
+        Passenger foundPassenger = BaggageHandler.readPassengerInfo(passengerID, "passengerinfo.bin");
         if (foundPassenger == null) {
             setErrorMessage("Passenger not found");
             return;
@@ -271,19 +304,19 @@ public class BaggageHandlerController
         String luggageID = passengerID + foundPassenger.getFlightNumber() + randomNumber;
         foundPassenger.setBoardingPassID(luggageID);
 
-        String[] record = new String[]{
-                passengerID,
-                luggageID,
-                String.valueOf(totalBags),
+        BaggageModel baggage = new BaggageModel(
+                foundPassenger,
+                totalBags,
                 flag,
-                firstWeightText,
-                totalBags == 2 ? secondWeightText : "0",
+                Double.parseDouble(firstWeightText),
+                totalBags == 2 ? Double.parseDouble(secondWeightText) : 0.0,
                 issueDescription
-        };
+        );
 
 
 
-        BaggageHandler.createFile(record, "baggage_data.bin");
+        BaggageHandler.saveBaggage(baggage, "baggage_data.bin");
+
         if (!luggageTable.getItems().contains(foundPassenger)) {
             luggageTable.getItems().add(foundPassenger);
         } else {
@@ -368,15 +401,6 @@ public class BaggageHandlerController
         return false;
     }
 
-    private Passenger findPassengerById(String passengerID) {
-        for (Passenger p : Passenger.passengerArrayList) {
-            if (p.getPassengerID().equals(passengerID)) {
-                return p;
-            }
-        }
-        return null;
-    }
-
     private void setErrorMessage(String message) {
         confirmationLabel.setText(message);
         confirmationLabel.setVisible(true);
@@ -394,19 +418,57 @@ public class BaggageHandlerController
 
 
 
-
-
-
-
     @javafx.fxml.FXML
     public void DeleteSpecificBaggageInformation(ActionEvent actionEvent) {
+
+        try {
+            javafx.fxml.FXMLLoader fxmlLoader = new javafx.fxml.FXMLLoader(getClass().getResource("/com/groupfourtysix/group46_apbn/Summy/DeleteSpecificBaggageInformation.fxml"));
+            javafx.scene.Parent root = fxmlLoader.load();
+            javafx.scene.Scene scene = new javafx.scene.Scene(root);
+            javafx.stage.Stage stage = new javafx.stage.Stage();
+            stage.setTitle("Delete Baggage Info");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            confirmationLabel.setText("Failed to open Delete Baggage Info view.");
+            confirmationLabel.setVisible(true);
+        }
     }
 
     @javafx.fxml.FXML
     public void openManualCheckView(ActionEvent actionEvent) {
+
+        try {
+            javafx.fxml.FXMLLoader fxmlLoader = new javafx.fxml.FXMLLoader(getClass().getResource("/com/groupfourtysix/group46_apbn/Summy/ManualCheck.fxml"));
+            javafx.scene.Parent root = fxmlLoader.load();
+            javafx.scene.Scene scene = new javafx.scene.Scene(root);
+            javafx.stage.Stage stage = new javafx.stage.Stage();
+            stage.setTitle("Manual Check");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            confirmationLabel.setText("Failed to open Manual Check view.");
+            confirmationLabel.setVisible(true);
+        }
     }
 
     @javafx.fxml.FXML
     public void openSearch(ActionEvent actionEvent) {
+
+        try {
+            javafx.fxml.FXMLLoader fxmlLoader = new javafx.fxml.FXMLLoader(getClass().getResource("/com/groupfourtysix/group46_apbn/Summy/SearchLuggage.fxml"));
+            javafx.scene.Parent root = fxmlLoader.load();
+            javafx.scene.Scene scene = new javafx.scene.Scene(root);
+            javafx.stage.Stage stage = new javafx.stage.Stage();
+            stage.setTitle("Search Luggage");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            confirmationLabel.setText("Failed to open Search Luggage view.");
+            confirmationLabel.setVisible(true);
+        }
     }
 }
