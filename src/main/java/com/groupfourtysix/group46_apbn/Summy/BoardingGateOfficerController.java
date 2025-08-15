@@ -43,4 +43,20 @@ public class BoardingGateOfficerController
     @javafx.fxml.FXML
     public void onDenyBoarding(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void openPassengerList(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void openReportedPassengerList(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void openEditBoardingList(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void openReportPassenger(ActionEvent actionEvent) {
+    }
 }
