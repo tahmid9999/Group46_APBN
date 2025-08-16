@@ -1,6 +1,7 @@
 package com.groupfourtysix.group46_apbn.Tahmid;
 
 import com.groupfourtysix.group46_apbn.HelloApplication;
+import com.groupfourtysix.group46_apbn.util.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -62,7 +63,15 @@ public class FlagClearPassengerController
         Passenger selectedSlot = FCtableview.getSelectionModel().getSelectedItem();
         System.out.println(selectedSlot);
 
+        for (Passenger ps: passengerArrayList) {
+            if (ps.getPassengerAccountID().equals(selectedSlot.getPassengerAccountID())) {
+                System.out.println(ps);
+                ps.setPassengerStatus("Flagged");
+                System.out.println(ps);
+            }
+        }
 
+        PassengerFileHandler.writeFile(passengerArrayList, "passengerInfo.bin");
 
 //        if (selectedSlot != null) {
 //            Passenger updatedSlot = new Passenger(selectedSlot.getItemName(), selectedSlot.getFlagReason(), selectedSlot.getItemDetails(), "Cleared");
