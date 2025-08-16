@@ -8,16 +8,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class FinalReportController
 {
+    ArrayList<Passenger> passengerArrayList = PassengerFileHandler.readFile("passengerInfo.bin");
     @javafx.fxml.FXML
     private ComboBox<String> FRstatusFilterCombo;
     @javafx.fxml.FXML
     private TableColumn<Passenger, String> FRpassengerStatusColumn;
     @javafx.fxml.FXML
-    private TableColumn FRflagReasonColumn;
+    private TableColumn<Passenger, String> FRflagReasonColumn;
     @javafx.fxml.FXML
     private TableColumn<Passenger, String> FRnameColumn;
     @javafx.fxml.FXML
@@ -29,7 +33,21 @@ public class FinalReportController
 
     @javafx.fxml.FXML
     public void initialize() {
+        ArrayList<Passenger> passengerArrayList = PassengerFileHandler.readFile("passengerInfo.bin");
+
+        FRnameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        FRpassengerIDColumn.setCellValueFactory(new PropertyValueFactory<>("passengerID"));
+        FRflightNumberColumn.setCellValueFactory(new PropertyValueFactory<>("flightNumber"));
+        FRflagReasonColumn.setCellValueFactory(new PropertyValueFactory<>("FlagReason"));
+        FRpassengerStatusColumn.setCellValueFactory(new PropertyValueFactory<>("passengerStatus"));
+
+        FRstatusFilterCombo.getItems().addAll("Cleared", "Flagged", "Detained", "Cancelled");
+
+        FRtableView.getItems().clear();
+        FRtableView.getItems().addAll(passengerArrayList);
     }
+
+    ArrayList<Passenger> tableShow = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) {
@@ -48,6 +66,18 @@ public class FinalReportController
 
     @javafx.fxml.FXML
     public void FRfilterButton(ActionEvent actionEvent) {
+        FRtableView.getItems().clear();
+        FRtableView.getItems().addAll(passengerArrayList);
+    }
 
+    @javafx.fxml.FXML
+    public void FRresetFilterButton(ActionEvent actionEvent) {
+        FRtableView.getItems().clear();
+        for (Passenger ps: passengerArrayList) {
+            if (ps.getPassengerStatus().equals(FRstatusFilterCombo.getValue())) {
+                tableShow.add(ps);
+            }
+        }
+        FRtableView.getItems().addAll(tableShow);
     }
 }

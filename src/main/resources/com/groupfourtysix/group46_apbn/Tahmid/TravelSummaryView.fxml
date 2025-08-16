@@ -18,7 +18,8 @@
         <Label fx:id="nationalityLabel" alignment="CENTER" layoutX="187.0" layoutY="138.0" prefHeight="18.0" prefWidth="246.0" />
         <Label fx:id="luggageStatusLabel" alignment="CENTER" layoutX="187.0" layoutY="183.0" prefHeight="18.0" prefWidth="246.0" />
         <Label fx:id="securityClearanceLabel" alignment="CENTER" layoutX="187.0" layoutY="210.0" prefHeight="18.0" prefWidth="246.0" />
-        <Button layoutX="248.0" layoutY="287.0" mnemonicParsing="false" onAction="#downloadSummaryButton" text="Download Summary" />
       <Button layoutX="32.0" layoutY="345.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+      <Label layoutX="67.0" layoutY="238.0" text="Boarding Pass ID:" />
+      <Label fx:id="boardingPassIDLabel" layoutX="204.0" layoutY="238.0" prefHeight="18.0" prefWidth="233.0" />
     </children>
 </AnchorPane>

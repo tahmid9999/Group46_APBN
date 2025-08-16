@@ -31,5 +31,6 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
+      <Button layoutX="395.0" layoutY="353.0" mnemonicParsing="false" onAction="#FRresetFilterButton" prefHeight="26.0" prefWidth="86.0" text="Reset Filter" />
    </children>
 </AnchorPane>

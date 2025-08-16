@@ -9,8 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class TravelSummaryController
-{
+import java.util.ArrayList;
+
+public class TravelSummaryController {
     @javafx.fxml.FXML
     private Label dateOfBirthLabel;
     @javafx.fxml.FXML
@@ -23,17 +24,25 @@ public class TravelSummaryController
     private Label nameLabel;
     @javafx.fxml.FXML
     private Label luggageStatusLabel;
-    private Passenger passenger = SessionManager.getPassengerSession().getLoggedInPassenger();
+
+    ArrayList<Passenger> passengersArrayListsArrayList = PassengerFileHandler.readFile("passengerInfo.bin");
+    @javafx.fxml.FXML
+    private Label boardingPassIDLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
-        nameLabel.setText(passenger.getName());
-        nationalityLabel.setText(passenger.getNationality());
-        passportNumberLabel.setText(passenger.getPassportNumber());
-    }
+        for (Passenger ps : passengersArrayListsArrayList) {
+            if (ps.getPassengerAccountID().equals(SessionManager.getAccountSession().getAccountID())) {
+                nameLabel.setText(ps.getScanStatus());
+                dateOfBirthLabel.setText(ps.getDateOfBirth().toString());
+                nationalityLabel.setText(ps.getPassengerStatus());
+                passportNumberLabel.setText(ps.getPassportNumber());
+                luggageStatusLabel.setText(ps.getLuggageStatus());
+                securityClearanceLabel.setText(ps.getPassengerStatus());
+                boardingPassIDLabel.setText(ps.getBoardingPassID());
+            }
+        }
 
-    @javafx.fxml.FXML
-    public void downloadSummaryButton(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML

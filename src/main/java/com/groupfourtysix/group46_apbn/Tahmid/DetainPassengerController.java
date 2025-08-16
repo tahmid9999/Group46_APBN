@@ -8,10 +8,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class DetainPassengerController
 {
+    ArrayList<Passenger> passengerArrayList = PassengerFileHandler.readFile("passengerInfo.bin");
+    ArrayList<Passenger> flaggedPassengers = FlaggedPassengerFileHandler.readFile("flaggedPassengerInfo.bin");
+    ArrayList<Passenger> detainedPassengers = DetainedPassengerFileHandler.readFile("detainedPassengerInfo.bin");
+
     @javafx.fxml.FXML
     private TableView<Passenger> DPtableview;
     @javafx.fxml.FXML
@@ -25,6 +32,14 @@ public class DetainPassengerController
 
     @javafx.fxml.FXML
     public void initialize() {
+        ArrayList<Passenger> flaggedPassengers = FlaggedPassengerFileHandler.readFile("flaggedPassengerInfo.bin");
+
+        DPpassengerIDcolumn.setCellValueFactory(new PropertyValueFactory<>("passengerID"));
+        DPpassportNumberColumn.setCellValueFactory(new PropertyValueFactory<>("passportNumber"));
+        DPflaggedItemColumn.setCellValueFactory(new PropertyValueFactory<>("Items"));
+        DPstatusColumn.setCellValueFactory(new PropertyValueFactory<>("passengerStatus"));
+
+        DPtableview.getItems().addAll(flaggedPassengers);
     }
 
     public void showAlert(String message){
@@ -54,6 +69,29 @@ public class DetainPassengerController
 
     @javafx.fxml.FXML
     public void detainPassengerButton(ActionEvent actionEvent) {
+        Passenger selectedSlot = DPtableview.getSelectionModel().getSelectedItem();
+
+        for (Passenger ps: passengerArrayList) {
+            if (ps.getPassengerAccountID().equals(selectedSlot.getPassengerAccountID())) {
+                ps.setPassengerStatus("Detained");
+                detainedPassengers.add(ps);
+
+                for (Passenger fp: flaggedPassengers) {
+                    if (fp.getPassengerID().equals(ps.getPassengerID())) {
+                        flaggedPassengers.remove(fp);
+                    }
+                }
+            }
+        }
+
+        PassengerFileHandler.writeFile(passengerArrayList, "passengerInfo.bin");
+        DetainedPassengerFileHandler.writeFile(detainedPassengers, "detainedPassengerInfo.bin");
+        FlaggedPassengerFileHandler.writeFile(flaggedPassengers, "flaggedPassengerInfo.bin");
+
+        DPtableview.getItems().clear();
+        ArrayList<Passenger> flaggedPassengers = FlaggedPassengerFileHandler.readFile("flaggedPassengerInfo.bin");
+        DPtableview.getItems().addAll(flaggedPassengers);
+
         showAlert("Passenger-status updated to Detained. This person cannot generate a Boarding Pass.");
     }
 }

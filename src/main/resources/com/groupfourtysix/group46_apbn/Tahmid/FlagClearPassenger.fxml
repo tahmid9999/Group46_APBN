@@ -19,7 +19,6 @@
       </TableView>
       <Button layoutX="40.0" layoutY="295.0" mnemonicParsing="false" onAction="#FCflagAsSuspiciousButton" prefHeight="26.0" prefWidth="137.0" text="Flag as suspicious" />
       <Button layoutX="231.0" layoutY="295.0" mnemonicParsing="false" onAction="#FCclearButton" prefHeight="26.0" prefWidth="138.0" text="Clear" />
-      <Button layoutX="421.0" layoutY="295.0" mnemonicParsing="false" onAction="#FCsubmitButton" prefHeight="26.0" prefWidth="138.0" text="Submit" />
       <Button layoutX="31.0" layoutY="348.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
    </children>
 </AnchorPane>

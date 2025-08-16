@@ -9,7 +9,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class WriteIncidentReportController
 {
@@ -28,6 +31,14 @@ public class WriteIncidentReportController
 
     @javafx.fxml.FXML
     public void initialize() {
+        ArrayList<Passenger> flaggedPassengers = FlaggedPassengerFileHandler.readFile("flaggedPassengerInfo.bin");
+
+        WIRpassengerIDcolumn.setCellValueFactory(new PropertyValueFactory<>("passengerID"));
+        WIRflaggedItemColumn.setCellValueFactory(new PropertyValueFactory<>("Items"));
+        WIRstatusColumn.setCellValueFactory(new PropertyValueFactory<>("passengerStatus"));
+
+        WIRtableview.getItems().clear();
+        WIRtableview.getItems().addAll(flaggedPassengers);
     }
 
     @javafx.fxml.FXML
@@ -47,11 +58,28 @@ public class WriteIncidentReportController
 
     @javafx.fxml.FXML
     public void WIRsubmitButton(ActionEvent actionEvent) {
-        if (WIRtextarea.getText().isEmpty()) {
+        if (WIRtextarea.getText().trim().isEmpty()) {
             WIRalertLabel.setText("Incident report can't be empty.");
             return;
         }
 
+        Passenger selectedSlot = WIRtableview.getSelectionModel().getSelectedItem();
 
+        ArrayList<Passenger> passengerArrayList = PassengerFileHandler.readFile("passengerInfo.bin");
+        ArrayList<Passenger> flaggedPassengers = FlaggedPassengerFileHandler.readFile("flaggedPassengerInfo.bin");
+
+        for (Passenger ps: passengerArrayList) {
+            if (ps.getPassengerAccountID().equals(selectedSlot.getPassengerAccountID())) {
+                ps.setIncidentReport(WIRtextarea.getText());
+
+                for (Passenger fp : flaggedPassengers) {
+                    if (ps.getPassengerID().equals(fp.getPassengerID())) {
+                        fp.setIncidentReport(WIRtextarea.getText());
+                    }
+                }
+            }
+        }
+        WIRtextarea.clear();
+        WIRalertLabel.setText("Incident report has been submitted successfully.");
     }
 }

@@ -24,27 +24,20 @@ public class ReviewFlaggedItemsReportController
     @javafx.fxml.FXML
     private TableColumn<Passenger, String> RFIRpassengerIDcolumn;
 
-    ArrayList<Passenger> passengerArrayList = PassengerFileHandler.readFile("passengerInfo.bin");
-    ArrayList<Passenger> flaggedPassengers = new ArrayList<>();
-
     @javafx.fxml.FXML
     public void initialize() {
+        ArrayList<Passenger> flaggedPassengers = FlaggedPassengerFileHandler.readFile("flaggedPassengerInfo.bin");
+
         RFIRpassengerIDcolumn.setCellValueFactory(new PropertyValueFactory<>("passengerID"));
         RFIRluggageIDcolumn.setCellValueFactory(new PropertyValueFactory<>("luggageID"));
         RFIRflaggedItemColumn.setCellValueFactory(new PropertyValueFactory<>("Items"));
         RFIRflagReasonColumn.setCellValueFactory(new PropertyValueFactory<>("FlagReason"));
 
-        for (Passenger passenger: passengerArrayList) {
-            if (passenger.getPassengerStatus().equals("Flagged")) {
-                flaggedPassengers.add(passenger);
-            }
-        }
-
-//        for (Passenger flaggedPassenger: flaggedPassengers) {
-//            RFIRflaggedItemReasonTableview.getItems().add(flaggedPassenger);
-//        }
-
+        RFIRflaggedItemReasonTableview.getItems().clear();
         RFIRflaggedItemReasonTableview.getItems().addAll(flaggedPassengers);
+        for (Passenger fp: flaggedPassengers) {
+            System.out.println(fp);
+        }
     }
 
     @javafx.fxml.FXML

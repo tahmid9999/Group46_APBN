@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 public class FlagClearPassengerController
 {   ArrayList<Passenger> passengerArrayList = PassengerFileHandler.readFile("passengerInfo.bin");
+    ArrayList<Passenger> flaggedPassengers = FlaggedPassengerFileHandler.readFile("flaggedPassengerInfo.bin");
 
     @javafx.fxml.FXML
     private TableColumn<Passenger, String> FCflaggedItemColumn;
@@ -55,36 +56,56 @@ public class FlagClearPassengerController
     }
 
     @javafx.fxml.FXML
-    public void FCsubmitButton(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
     public void FCflagAsSuspiciousButton(ActionEvent actionEvent) {
         Passenger selectedSlot = FCtableview.getSelectionModel().getSelectedItem();
-        System.out.println(selectedSlot);
+//        System.out.println(selectedSlot);
 
         for (Passenger ps: passengerArrayList) {
             if (ps.getPassengerAccountID().equals(selectedSlot.getPassengerAccountID())) {
-                System.out.println(ps);
+//                System.out.println(ps);
                 ps.setPassengerStatus("Flagged");
-                System.out.println(ps);
+//                System.out.println(ps);
+                flaggedPassengers.add(ps);
             }
         }
 
         PassengerFileHandler.writeFile(passengerArrayList, "passengerInfo.bin");
+        FlaggedPassengerFileHandler.writeFile(flaggedPassengers, "flaggedPassengerInfo.bin");
 
-//        if (selectedSlot != null) {
-//            Passenger updatedSlot = new Passenger(selectedSlot.getItemName(), selectedSlot.getFlagReason(), selectedSlot.getItemDetails(), "Cleared");
+      for (Passenger ps: passengerArrayList) {
+          if (ps.getPassengerAccountID().equals(selectedSlot.getPassengerAccountID())) {
+              FCtableview.getItems().clear();
+              FCtableview.getItems().add(ps);
+          }
+      }
+
     }
 
     @javafx.fxml.FXML
     public void FCclearButton(ActionEvent actionEvent) {
-//        Content selectedSlot = FCtableview.getSelectionModel().getSelectedItem();
-//        if (selectedSlot != null) {
-//            Content updatedSlot = new Content(selectedSlot.getItemName(), selectedSlot.getFlagReason(), selectedSlot.getItemDetails(), "Cleared");
-//
-//            FCtableview.getItems().remove(selectedSlot);
-//            FCtableview.getItems().add(updatedSlot);
-//        }
+        Passenger selectedSlot = FCtableview.getSelectionModel().getSelectedItem();
+//        System.out.println(selectedSlot);
+
+        for (Passenger ps: passengerArrayList) {
+            if (ps.getPassengerAccountID().equals(selectedSlot.getPassengerAccountID())) {
+//                System.out.println(ps);
+                ps.setPassengerStatus("Cleared");
+//                System.out.println(ps);
+                for (Passenger fp: flaggedPassengers) {
+                    if (ps.getPassengerID().equals(fp.getPassengerID()))
+                        flaggedPassengers.remove(fp);
+                }
+            }
+        }
+
+        PassengerFileHandler.writeFile(passengerArrayList, "passengerInfo.bin");
+        FlaggedPassengerFileHandler.writeFile(flaggedPassengers, "flaggedPassengerInfo.bin");
+
+        for (Passenger ps: passengerArrayList) {
+            if (ps.getPassengerAccountID().equals(selectedSlot.getPassengerAccountID())) {
+                FCtableview.getItems().clear();
+                FCtableview.getItems().add(ps);
+            }
+        }
     }
 }

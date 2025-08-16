@@ -26,16 +26,17 @@ public class SecurityCheckController
 
     @javafx.fxml.FXML
     public void initialize() {
-//        for (Passenger ps: passengersArrayListsArrayList) {
-//            if (ps.getPassengerAccountID().equals(SessionManager.getAccountSession().getAccountID())) {
-//                scanStatusLabel.setText(ps.getScanStatus());
-//                securityStatusLabel.setText(ps.getPassengerStatus());
-//                if (ps.getPassengerStatus().equals("Flagged")) {
-//                    securityConcernLabel.setText("Security concern detected. Please contact airport security");
-//            }
-//        }
-//
-//        }
+        for (Passenger ps: passengersArrayListsArrayList) {
+            if (ps.getPassengerAccountID().equals(SessionManager.getAccountSession().getAccountID())) {
+                scanStatusLabel.setText(ps.getScanStatus());
+                securityStatusLabel.setText(ps.getPassengerStatus());
+                if (ps.getPassengerStatus().equals("Flagged")) {
+                    securityConcernLabel.setText("Security concern detected. Please contact airport security");
+            }
+        }
+
+        }
+
     }
 
     @javafx.fxml.FXML
