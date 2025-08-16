@@ -1,9 +1,14 @@
 package com.groupfourtysix.group46_apbn.Habib;
 
+import com.groupfourtysix.group46_apbn.HelloApplication;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class AddFlightInfoController
 {
@@ -55,5 +60,32 @@ public class AddFlightInfoController
         );
         FileHandler.createFile(addFlightData, "FlightInfo.bin");
 //        System.out.println(addFlightData);
+    }
+
+    @javafx.fxml.FXML
+    public void BackButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Habib/FlightDashboard.fxml"));
+            Scene nextScene = new Scene(fxmlLoader.load());
+
+            Object source = actionEvent.getSource();
+            Stage nextStage = null;
+
+            if (source instanceof Node) {
+                nextStage = (Stage) ((Node) source).getScene().getWindow();
+            }
+
+            if (nextStage == null) {
+                System.err.println("Could not find stage");
+                return;
+            }
+
+            nextStage.setTitle("Flight Dashboard");
+            nextStage.setScene(nextScene);
+            nextStage.show();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

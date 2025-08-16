@@ -8,37 +8,40 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="467.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Habib.EditFlightInfoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Habib.EditFlightInfoController">
    <children>
-      <Label layoutX="311.0" layoutY="24.0" text="Edit Flight Information" underline="true">
+      <Label layoutX="307.0" layoutY="24.0" text="Edit Flight Information" underline="true">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="87.0" text="Flight Number" />
-      <TextField fx:id="FlightNumberField" layoutX="180.0" layoutY="83.0" />
-      <Label layoutX="40.0" layoutY="136.0" text="Airline Name" />
-      <Label layoutX="441.0" layoutY="87.0" text="Departure Date" />
-      <Label layoutX="440.0" layoutY="136.0" text="Arrival Date" />
-      <Label layoutX="40.0" layoutY="187.0" text="Aircraft Type" />
-      <Label layoutX="440.0" layoutY="232.0" text="Departure Terminal" />
-      <Label layoutX="40.0" layoutY="232.0" prefHeight="18.0" prefWidth="98.0" text="Departure Airport" />
-      <Label layoutX="440.0" layoutY="183.0" text="Estimate Flight Duration" />
-      <TextField fx:id="AirlineNameField" layoutX="180.0" layoutY="132.0" />
-      <TextField fx:id="AircraftTypeField" layoutX="180.0" layoutY="183.0" />
-      <TextField fx:id="DepartureTerminalField" layoutX="587.0" layoutY="228.0" />
-      <TextField fx:id="DepartureAirportField" layoutX="180.0" layoutY="228.0" />
-      <DatePicker fx:id="DepartureDatePicker" layoutX="587.0" layoutY="83.0" />
-      <DatePicker fx:id="ArrivalDatePicker" layoutX="587.0" layoutY="132.0" />
-      <TextField fx:id="EstimateFlightDurationField" layoutX="587.0" layoutY="179.0" />
-      <Button layoutX="310.0" layoutY="394.0" mnemonicParsing="false" onAction="#AddFlightButton" prefHeight="26.0" prefWidth="261.0" text="Edit Flight" />
-      <TextField fx:id="ArrivalAirportField" layoutX="180.0" layoutY="273.0" />
-      <Label layoutX="40.0" layoutY="277.0" prefHeight="18.0" prefWidth="98.0" text="Arrival Airport" />
-      <Label layoutX="440.0" layoutY="281.0" text="Arrival Terminal" />
-      <Label layoutX="440.0" layoutY="326.0" text="Flight Status" />
-      <TextField fx:id="ArrivalTerminalField" layoutX="587.0" layoutY="277.0" />
-      <Label layoutX="37.0" layoutY="324.0" prefHeight="18.0" prefWidth="98.0" text="Seat Availability" />
-      <TextField fx:id="SeatAvailabilityField" layoutX="180.0" layoutY="321.0" />
-      <ComboBox fx:id="FlightStatusComboBox" layoutX="587.0" layoutY="322.0" prefWidth="150.0" />
+      <Label layoutX="37.0" layoutY="158.0" text="Flight Number" />
+      <TextField fx:id="FlightNumberField" layoutX="176.0" layoutY="154.0" />
+      <Label layoutX="36.0" layoutY="207.0" text="Airline Name" />
+      <Label layoutX="437.0" layoutY="158.0" text="Departure Date" />
+      <Label layoutX="436.0" layoutY="207.0" text="Arrival Date" />
+      <Label layoutX="36.0" layoutY="258.0" text="Aircraft Type" />
+      <Label layoutX="436.0" layoutY="303.0" text="Departure Terminal" />
+      <Label layoutX="36.0" layoutY="303.0" prefHeight="18.0" prefWidth="98.0" text="Departure Airport" />
+      <Label layoutX="436.0" layoutY="254.0" text="Estimate Flight Duration" />
+      <TextField fx:id="AirlineNameField" layoutX="176.0" layoutY="203.0" />
+      <TextField fx:id="AircraftTypeField" layoutX="176.0" layoutY="254.0" />
+      <TextField fx:id="DepartureTerminalField" layoutX="583.0" layoutY="299.0" />
+      <TextField fx:id="DepartureAirportField" layoutX="176.0" layoutY="299.0" />
+      <DatePicker fx:id="DepartureDatePicker" layoutX="583.0" layoutY="154.0" />
+      <DatePicker fx:id="ArrivalDatePicker" layoutX="583.0" layoutY="203.0" />
+      <TextField fx:id="EstimateFlightDurationField" layoutX="583.0" layoutY="250.0" />
+      <Button layoutX="305.0" layoutY="459.0" mnemonicParsing="false" onAction="#AddFlightButton" prefHeight="35.0" prefWidth="262.0" text="Edit Flight" />
+      <TextField fx:id="ArrivalAirportField" layoutX="176.0" layoutY="344.0" />
+      <Label layoutX="36.0" layoutY="348.0" prefHeight="18.0" prefWidth="98.0" text="Arrival Airport" />
+      <Label layoutX="436.0" layoutY="352.0" text="Arrival Terminal" />
+      <Label layoutX="436.0" layoutY="397.0" text="Flight Status" />
+      <TextField fx:id="ArrivalTerminalField" layoutX="583.0" layoutY="348.0" />
+      <Label layoutX="33.0" layoutY="395.0" prefHeight="18.0" prefWidth="98.0" text="Seat Availability" />
+      <TextField fx:id="SeatAvailabilityField" layoutX="176.0" layoutY="392.0" />
+      <ComboBox fx:id="FlightStatusComboBox" layoutX="583.0" layoutY="393.0" prefWidth="150.0" />
+      <TextField fx:id="InputFlightNumberField" layoutX="196.0" layoutY="82.0" prefHeight="35.0" prefWidth="258.0" promptText="Enter Flight Number" />
+      <Button layoutX="480.0" layoutY="82.0" mnemonicParsing="false" onAction="#FetchDataButton" prefHeight="35.0" prefWidth="116.0" text="Fetch Data" />
+      <Button layoutX="671.0" layoutY="464.0" mnemonicParsing="false" onAction="#BackButton" prefHeight="35.0" prefWidth="83.0" text="Back" />
    </children>
 </AnchorPane>
