@@ -47,7 +47,7 @@
         </HBox>
       <HBox alignment="CENTER" spacing="20">
          <children>
-            <Button onAction="#onFinalizeBoarding" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;" text="Match Passport Data" />
+            <Button onAction="#onMatchPassData" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;" text="Match Passport Data" />
             <Button mnemonicParsing="false" onAction="#openReportPassenger" text="Report Passenger" />
             <Button onAction="#openReportedPassengerList" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="See Reported Passenger List" />
          </children>

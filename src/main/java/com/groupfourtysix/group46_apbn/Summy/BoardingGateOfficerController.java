@@ -3,8 +3,13 @@ package com.groupfourtysix.group46_apbn.Summy;
 import com.groupfourtysix.group46_apbn.Tahmid.Passenger;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class BoardingGateOfficerController
 {
@@ -61,6 +66,8 @@ public class BoardingGateOfficerController
 
     @javafx.fxml.FXML
     public void onGenerateReport(ActionEvent actionEvent) {
+        openFXML("GenerateDailyReport.fxml", "Generate Daily Report");
+
     }
 
     @javafx.fxml.FXML
@@ -108,17 +115,41 @@ public class BoardingGateOfficerController
 
     @javafx.fxml.FXML
     public void openPassengerList(ActionEvent actionEvent) {
+
+        openFXML("Generatedboardingreport.fxml", "Passenger List on Flight");
     }
 
     @javafx.fxml.FXML
     public void openReportedPassengerList(ActionEvent actionEvent) {
+        openFXML("openReportedPassengerList.fxml", "Reported Passenger List");
     }
 
     @javafx.fxml.FXML
     public void openEditBoardingList(ActionEvent actionEvent) {
+        openFXML("EditBoardingListView.fxml", "Edit Boarding List");
     }
 
     @javafx.fxml.FXML
     public void openReportPassenger(ActionEvent actionEvent) {
+        openFXML("ReportPassenger.fxml", "Report Passenger");
+    }
+
+    private void openFXML(String fxmlFile, String title) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle(title);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            verificationResult.setText("Error opening " + title);
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void onMatchPassData(ActionEvent actionEvent) {
+        openFXML("MatchPassportInfo.fxml", "Match Passport Information");
     }
 }
