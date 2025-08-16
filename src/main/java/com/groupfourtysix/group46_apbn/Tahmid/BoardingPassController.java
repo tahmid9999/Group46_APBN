@@ -23,21 +23,26 @@ public class BoardingPassController
     private Label passengerNameLabel;
     @javafx.fxml.FXML
     private Label statusLabel;
+//    private Passenger passenger = SessionManager.getLoggedInPassenger();
 
     @javafx.fxml.FXML
     public void initialize() {
+        passengerNameLabel.setText(SessionManager.getPassengerSession().getLoggedInPassenger().getName());
+        passengerIdLabel.setText(SessionManager.getPassengerSession().getLoggedInPassenger().getPassengerID());
+        flightNoLabel.setText(SessionManager.getPassengerSession().getLoggedInPassenger().getFlightNumber());
+        statusLabel.setText(SessionManager.getPassengerSession().getLoggedInPassenger().getPassengerStatus());
     }
 
     @javafx.fxml.FXML
     public void generateBoardingPassButton(ActionEvent actionEvent) {
-        Passenger p = SessionManager.getLoggedInPassenger();
+        Passenger p = SessionManager.getPassengerSession().getLoggedInPassenger();
         Alert a = new Alert(Alert.AlertType.WARNING);
-        if (p.getStatus().equals("Cancelled")){
-            a.setContentText("Cancelled");
+        if (p.getPassengerStatus().equals("Cancelled")){
+            a.setContentText("Cancelled. You can't generate Boarding Pass ID.");
             a.showAndWait();
             return;
         } else {
-            a.setContentText("Approved");
+            a.setContentText("Boarding Pass ID has been generated successfully.");
             a.showAndWait();
         }
     }

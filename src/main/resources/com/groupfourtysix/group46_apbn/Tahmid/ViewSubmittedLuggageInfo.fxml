@@ -11,10 +11,9 @@
    <children>
       <TableView fx:id="VSLItableview" layoutX="40.0" layoutY="83.0" prefHeight="238.0" prefWidth="524.0">
         <columns>
-          <TableColumn fx:id="VSLItotalBagsColumn" prefWidth="135.20001220703125" text="Total number of bags" />
-          <TableColumn fx:id="VSLICarryOnBags" prefWidth="158.4000244140625" text="Number of carry-on bags" />
-            <TableColumn fx:id="VSLIluggageTypesColumn" prefWidth="97.5999755859375" text="Luggage Types" />
-            <TableColumn fx:id="VSLIbagContentsColumn" prefWidth="131.20001220703125" text="Bag Contents" />
+          <TableColumn fx:id="VSLIpassengerIDcolumn" prefWidth="81.5999755859375" text="PassengerID" />
+          <TableColumn fx:id="VSLItotalBagsColumn" prefWidth="128.0" text="Total number of bags" />
+            <TableColumn fx:id="VSLICarryOnBagsColumn" prefWidth="151.99993896484375" text="Number of carry-on bags" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

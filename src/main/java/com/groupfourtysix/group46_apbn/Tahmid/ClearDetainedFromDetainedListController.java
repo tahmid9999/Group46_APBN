@@ -12,8 +12,6 @@ import javafx.stage.Stage;
 public class ClearDetainedFromDetainedListController
 {
     @javafx.fxml.FXML
-    private TableColumn<Passenger, String> CDflagReasonColumn;
-    @javafx.fxml.FXML
     private TableColumn<Passenger, String> CDdetainedNameColumn;
     @javafx.fxml.FXML
     private TableView<Passenger> CDtableview;

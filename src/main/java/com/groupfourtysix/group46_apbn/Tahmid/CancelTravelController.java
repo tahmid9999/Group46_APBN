@@ -8,8 +8,11 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class CancelTravelController
-{
+{   ArrayList<Passenger> passengerArrayList = PassengerFileHandler.readFile("passengerInfo.bin");
+
     @javafx.fxml.FXML
     public void initialize() {
     }
@@ -31,7 +34,19 @@ public class CancelTravelController
 
     @javafx.fxml.FXML
     public void yesCancelButton(ActionEvent actionEvent) {
-        SessionManager.getLoggedInPassenger().setStatus("Cancelled");
-        System.out.println(SessionManager.getLoggedInPassenger().getStatus());
+//        SessionManager.getPassengerSession().getLoggedInPassenger().setPassengerStatus("Cancelled");
+//        System.out.println(SessionManager.getPassengerSession().getLoggedInPassenger().getPassengerStatus());
+
+
+        for (Passenger ps: passengerArrayList) {
+            if (ps.getPassengerAccountID().equals(SessionManager.getAccountSession().getAccountID())) {
+//                System.out.println(ps);
+                ps.setPassengerStatus("Cancelled");
+//                System.out.println(ps);
+            }
+        }
+
+        PassengerFileHandler.writeFile(passengerArrayList, "passengerInfo.bin");
+
     }
 }

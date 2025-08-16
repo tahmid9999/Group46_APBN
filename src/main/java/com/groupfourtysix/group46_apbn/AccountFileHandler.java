@@ -2,7 +2,6 @@ package com.groupfourtysix.group46_apbn;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class AccountFileHandler extends ObjectOutputStream{
     public AccountFileHandler(OutputStream out) throws IOException{
@@ -35,8 +34,8 @@ public class AccountFileHandler extends ObjectOutputStream{
         }
     }
 
-    public static List<Account> readFile(String filename){
-        List<Account> accounts = new ArrayList<>();
+    public static ArrayList<Account> readFile(String filename){
+        ArrayList<Account> accounts = new ArrayList<>();
         try{
             FileInputStream fis = new FileInputStream(filename);
             ObjectInputStream ois = new ObjectInputStream(fis);

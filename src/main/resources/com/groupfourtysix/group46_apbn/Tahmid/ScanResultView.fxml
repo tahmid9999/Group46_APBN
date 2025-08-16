@@ -9,9 +9,9 @@
     <children>
         <TableView fx:id="SRTableView" layoutX="80.0" layoutY="75.0" prefHeight="245.0" prefWidth="456.0">
             <columns>
-                <TableColumn fx:id="SRcontentColumn" prefWidth="75.0" text="Content" />
+                <TableColumn fx:id="SRitemColumn" prefWidth="75.0" text="Item" />
                 <TableColumn fx:id="SRstatusColumn" prefWidth="75.0" text="Status" />
-                <TableColumn fx:id="SRdetailsColumn" prefWidth="75.0" text="Details" />
+                <TableColumn fx:id="SRflagReasonColumn" prefWidth="75.0" text="Flag Reason (If any)" />
             </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

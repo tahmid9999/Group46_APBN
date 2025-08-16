@@ -7,24 +7,34 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class ViewSubmittedLuggageInfoController
 {
 
     @javafx.fxml.FXML
-    private TableView VSLItableview;
+    private TableView<Passenger> VSLItableview;
     @javafx.fxml.FXML
-    private TableColumn VSLICarryOnBags;
+    private TableColumn<Passenger, Integer> VSLItotalBagsColumn;
     @javafx.fxml.FXML
-    private TableColumn VSLIbagContentsColumn;
+    private TableColumn<Passenger, Integer> VSLICarryOnBagsColumn;
     @javafx.fxml.FXML
-    private TableColumn VSLIluggageTypesColumn;
-    @javafx.fxml.FXML
-    private TableColumn VSLItotalBagsColumn;
+    private TableColumn<Passenger, String> VSLIpassengerIDcolumn;
+
+    ArrayList<Passenger> passengerArrayList = PassengerFileHandler.readFile("passengerInfo.bin");
 
     @javafx.fxml.FXML
     public void initialize() {
+        VSLIpassengerIDcolumn.setCellValueFactory(new PropertyValueFactory<>("passengerID"));
+        VSLItotalBagsColumn.setCellValueFactory(new PropertyValueFactory<>("totalNumOfBags"));
+        VSLICarryOnBagsColumn.setCellValueFactory(new PropertyValueFactory<>("numOfCarryOnBags"));
+
+        for (Passenger passenger: passengerArrayList) {
+            VSLItableview.getItems().add(passenger);
+        }
     }
 
     @javafx.fxml.FXML

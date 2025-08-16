@@ -14,7 +14,6 @@
           <TableColumn fx:id="CDdetainedNameColumn" prefWidth="117.60003662109375" text="Detained Name" />
           <TableColumn fx:id="CDpassportNumberColumn" prefWidth="120.0" text="Passport No." />
             <TableColumn fx:id="CDflightNumberColumn" prefWidth="124.0" text="Flight No." />
-            <TableColumn fx:id="CDflagReasonColumn" prefWidth="103.199951171875" text="Flag Reason" />
             <TableColumn fx:id="CDstatusColumn" prefWidth="85.60003662109375" text="Status" />
         </columns>
          <columnResizePolicy>

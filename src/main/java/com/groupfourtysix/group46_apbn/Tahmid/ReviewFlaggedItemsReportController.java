@@ -7,19 +7,44 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class ReviewFlaggedItemsReportController
-{
+{   @javafx.fxml.FXML
+    private TableColumn<Passenger, String> RFIRflagReasonColumn;
     @javafx.fxml.FXML
-    private TableColumn RFIRflagReasonColumn;
+    private TableView<Passenger> RFIRflaggedItemReasonTableview;
     @javafx.fxml.FXML
-    private TableView RFIRflaggedItemReasonTableview;
+    private TableColumn<Passenger, String> RFIRflaggedItemColumn;
     @javafx.fxml.FXML
-    private TableColumn RFIRflaggedItemColumn;
+    private TableColumn<Passenger, String> RFIRluggageIDcolumn;
+    @javafx.fxml.FXML
+    private TableColumn<Passenger, String> RFIRpassengerIDcolumn;
+
+    ArrayList<Passenger> passengerArrayList = PassengerFileHandler.readFile("passengerInfo.bin");
+    ArrayList<Passenger> flaggedPassengers = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void initialize() {
+        RFIRpassengerIDcolumn.setCellValueFactory(new PropertyValueFactory<>("passengerID"));
+        RFIRluggageIDcolumn.setCellValueFactory(new PropertyValueFactory<>("luggageID"));
+        RFIRflaggedItemColumn.setCellValueFactory(new PropertyValueFactory<>("Items"));
+        RFIRflagReasonColumn.setCellValueFactory(new PropertyValueFactory<>("FlagReason"));
+
+        for (Passenger passenger: passengerArrayList) {
+            if (passenger.getPassengerStatus().equals("Flagged")) {
+                flaggedPassengers.add(passenger);
+            }
+        }
+
+//        for (Passenger flaggedPassenger: flaggedPassengers) {
+//            RFIRflaggedItemReasonTableview.getItems().add(flaggedPassenger);
+//        }
+
+        RFIRflaggedItemReasonTableview.getItems().addAll(flaggedPassengers);
     }
 
     @javafx.fxml.FXML
@@ -35,9 +60,5 @@ public class ReviewFlaggedItemsReportController
         catch(Exception e){
             //
         }
-    }
-
-    @javafx.fxml.FXML
-    public void RFIRexportButton(ActionEvent actionEvent) {
     }
 }

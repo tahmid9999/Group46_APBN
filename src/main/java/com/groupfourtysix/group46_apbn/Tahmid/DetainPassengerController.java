@@ -13,11 +13,15 @@ import javafx.stage.Stage;
 public class DetainPassengerController
 {
     @javafx.fxml.FXML
-    private TableView DPtableview;
+    private TableView<Passenger> DPtableview;
     @javafx.fxml.FXML
-    private TableColumn DPstatusColumn;
+    private TableColumn<Passenger, String> DPstatusColumn;
     @javafx.fxml.FXML
-    private TableColumn DPflaggedItemColumn;
+    private TableColumn<Passenger, String> DPflaggedItemColumn;
+    @javafx.fxml.FXML
+    private TableColumn<Passenger, String> DPpassengerIDcolumn;
+    @javafx.fxml.FXML
+    private TableColumn<Passenger, String> DPpassportNumberColumn;
 
     @javafx.fxml.FXML
     public void initialize() {

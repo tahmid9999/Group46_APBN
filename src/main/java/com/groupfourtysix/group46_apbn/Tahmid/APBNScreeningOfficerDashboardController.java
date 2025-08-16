@@ -73,7 +73,7 @@ public class APBNScreeningOfficerDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/WriteIncidentReport.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Flag/Clear Passenger");
+            nextStage.setTitle("Write Incident Report");
             nextStage.setScene(nextScene);
             nextStage.show();
         }
@@ -88,7 +88,7 @@ public class APBNScreeningOfficerDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/FlagClearPassenger.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Write Incident Report");
+            nextStage.setTitle("Flag/Clear Passenger");
             nextStage.setScene(nextScene);
             nextStage.show();
         }

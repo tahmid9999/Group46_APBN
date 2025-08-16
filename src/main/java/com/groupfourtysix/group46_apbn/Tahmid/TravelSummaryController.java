@@ -23,7 +23,7 @@ public class TravelSummaryController
     private Label nameLabel;
     @javafx.fxml.FXML
     private Label luggageStatusLabel;
-    private Passenger passenger = SessionManager.getLoggedInPassenger();
+    private Passenger passenger = SessionManager.getPassengerSession().getLoggedInPassenger();
 
     @javafx.fxml.FXML
     public void initialize() {

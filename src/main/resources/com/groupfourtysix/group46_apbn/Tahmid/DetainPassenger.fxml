@@ -9,8 +9,10 @@
     <children>
         <TableView fx:id="DPtableview" layoutX="40.0" layoutY="34.0" prefHeight="231.0" prefWidth="520.0">
             <columns>
-                <TableColumn fx:id="DPflaggedItemColumn" prefWidth="75.0" text="Flagged Item" />
-                <TableColumn fx:id="DPstatusColumn" prefWidth="75.0" text="Status" />
+                <TableColumn fx:id="DPpassengerIDcolumn" prefWidth="97.60003662109375" text="Passenger ID" />
+                <TableColumn fx:id="DPpassportNumberColumn" prefWidth="117.5999755859375" text="Passport No." />
+            <TableColumn fx:id="DPflaggedItemColumn" prefWidth="192.79998779296875" text="Flagged Item" />
+            <TableColumn fx:id="DPstatusColumn" prefWidth="89.5999755859375" text="Status" />
             </columns>
             <columnResizePolicy>
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
