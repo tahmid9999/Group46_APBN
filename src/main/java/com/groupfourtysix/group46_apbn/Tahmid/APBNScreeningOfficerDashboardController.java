@@ -17,26 +17,9 @@ public class APBNScreeningOfficerDashboardController
     public void initialize() {
     }
 
-    public String showAlert(String message){
-        Alert a = new Alert(Alert.AlertType.CONFIRMATION);
-        a.setContentText(message);
-
-        ButtonType yButton = new ButtonType("Yes");
-        ButtonType nButton = new ButtonType("No");
-        a.getButtonTypes().setAll(yButton, nButton);
-        Optional<ButtonType> resultButtonType = a.showAndWait();
-
-        if(resultButtonType.isPresent() && resultButtonType.get() == yButton){
-            return "Yes";
-        }
-        else{
-            return "No";
-        }
-    }
 
     @javafx.fxml.FXML
     public void logOutButton(ActionEvent actionEvent) {
-        if(showAlert("Are you sure you want to log out?").equals("Yes")){
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login.fxml"));
                 Scene nextScene = new Scene(fxmlLoader.load());
@@ -48,7 +31,6 @@ public class APBNScreeningOfficerDashboardController
             catch(Exception e){
                 //
             }
-        }
 
     }
 
