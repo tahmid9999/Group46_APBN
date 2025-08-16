@@ -63,6 +63,7 @@ public class FlagClearPassengerController
         System.out.println(selectedSlot);
 
 
+
 //        if (selectedSlot != null) {
 //            Passenger updatedSlot = new Passenger(selectedSlot.getItemName(), selectedSlot.getFlagReason(), selectedSlot.getItemDetails(), "Cleared");
     }
