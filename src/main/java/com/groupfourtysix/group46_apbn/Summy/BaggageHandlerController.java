@@ -1,6 +1,5 @@
 package com.groupfourtysix.group46_apbn.Summy;
 
-import com.groupfourtysix.group46_apbn.Tahmid.LuggageInfo;
 import com.groupfourtysix.group46_apbn.Tahmid.Passenger;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;

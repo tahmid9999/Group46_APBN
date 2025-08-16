@@ -1,5 +1,7 @@
 package com.groupfourtysix.group46_apbn.Tahmid;
 
+import com.groupfourtysix.group46_apbn.Account;
+import com.groupfourtysix.group46_apbn.AccountFileHandler;
 import com.groupfourtysix.group46_apbn.HelloApplication;
 import com.groupfourtysix.group46_apbn.util.SessionManager;
 import javafx.event.ActionEvent;
@@ -8,6 +10,8 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class SecurityCheckController
 {
@@ -18,13 +22,20 @@ public class SecurityCheckController
     @javafx.fxml.FXML
     private Label securityStatusLabel;
 
+    ArrayList<Passenger> passengersArrayListsArrayList = PassengerFileHandler.readFile("passengerInfo.bin");
+
     @javafx.fxml.FXML
     public void initialize() {
-        scanStatusLabel.setText(SessionManager.getLoggedInPassenger().getScanStatus());
-        securityStatusLabel.setText(SessionManager.getLoggedInPassenger().getPassengerStatus());
-        if (SessionManager.getLoggedInPassenger().getPassengerStatus().equals("Flagged")) {
-            securityConcernLabel.setText("Security concern detected. Please contact airport security");
-        }
+//        for (Passenger ps: passengersArrayListsArrayList) {
+//            if (ps.getPassengerAccountID().equals(SessionManager.getAccountSession().getAccountID())) {
+//                scanStatusLabel.setText(ps.getScanStatus());
+//                securityStatusLabel.setText(ps.getPassengerStatus());
+//                if (ps.getPassengerStatus().equals("Flagged")) {
+//                    securityConcernLabel.setText("Security concern detected. Please contact airport security");
+//            }
+//        }
+//
+//        }
     }
 
     @javafx.fxml.FXML

@@ -10,8 +10,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class LuggageInfoSubmissionController
-{
+{   ArrayList<Passenger> passengerArrayList = PassengerFileHandler.readFile("passengerInfo.bin");
+
     @javafx.fxml.FXML
     private TextField numOfCarryOnBagsTextfield;
     @javafx.fxml.FXML
@@ -64,11 +67,15 @@ public class LuggageInfoSubmissionController
         }
 
 
-        SessionManager.getLoggedInPassenger().setTotalNumOfBags(Integer.parseInt(totalNumOfBagsTextfield.getText()));
-        SessionManager.getLoggedInPassenger().setTotalNumOfBags(Integer.parseInt(numOfCarryOnBagsTextfield.getText()));
-        SessionManager.getLoggedInPassenger().setLuggageStatus("Submitted");
-        System.out.println(SessionManager.getLoggedInPassenger().getTotalNumOfBags());
-        System.out.println(SessionManager.getLoggedInPassenger().getNumOfCarryOnBags());
+        for (Passenger passenger: passengerArrayList) {
+            if (passenger.getPassengerAccountID().equals(SessionManager.getAccountSession().getAccountID())) {
+                passenger.setTotalNumOfBags(Integer.parseInt(totalNumOfBagsTextfield.getText()));
+                passenger.setNumOfCarryOnBags(Integer.parseInt(numOfCarryOnBagsTextfield.getText()));
+                passenger.setLuggageStatus("Submitted");
+            }
+        }
+
+        PassengerFileHandler.writeFile(passengerArrayList, "passengerInfo.bin");
 
         vdVrLuggageInfoSubLabel.setText("Luggage Info has been submitted successfully");
 

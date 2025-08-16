@@ -1,6 +1,7 @@
 package com.groupfourtysix.group46_apbn.Tahmid;
 
 import com.groupfourtysix.group46_apbn.HelloApplication;
+import com.groupfourtysix.group46_apbn.util.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -118,20 +119,20 @@ public class NewPassengerRegistrationController
                 nationalityComboInput.getValue(),
                 passengerID,
                 flightNumber,
-                null,
-                null,
-                null,
-                null,
+                "Cleared",
+                "Completed",
+                "",
+                "",
                 0,
                 0,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                SessionManager.getAccountSession().getAccountID()
                 );
 
         if (!hasPassengerDuplicateID) {

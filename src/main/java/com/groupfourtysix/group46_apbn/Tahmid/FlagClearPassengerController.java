@@ -10,22 +10,29 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class FlagClearPassengerController
-{
+{   ArrayList<Passenger> passengerArrayList = PassengerFileHandler.readFile("passengerInfo.bin");
 
     @javafx.fxml.FXML
-    private TableColumn<Content, String> FCflaggedItemColumn;
+    private TableColumn<Passenger, String> FCflaggedItemColumn;
     @javafx.fxml.FXML
-    private TableColumn<Content, String> FCstatusColumn;
+    private TableColumn<Passenger, String> FCstatusColumn;
     @javafx.fxml.FXML
-    private TableView<Content> FCtableview;
+    private TableView<Passenger> FCtableview;
     @javafx.fxml.FXML
-    private TableColumn<Content, String> FCpassengerIDcolumn;
+    private TableColumn<Passenger, String> FCpassengerIDcolumn;
 
     @javafx.fxml.FXML
     public void initialize() {
-        FCflaggedItemColumn.setCellValueFactory(new PropertyValueFactory<>("itemName"));
-        FCstatusColumn.setCellValueFactory(new PropertyValueFactory<>("itemName"));
+        FCpassengerIDcolumn.setCellValueFactory(new PropertyValueFactory<>("passengerID"));
+        FCflaggedItemColumn.setCellValueFactory(new PropertyValueFactory<>("Items"));
+        FCstatusColumn.setCellValueFactory(new PropertyValueFactory<>("passengerStatus"));
+
+        for (Passenger passenger: passengerArrayList) {
+            FCtableview.getItems().add(passenger);
+        }
     }
 
     public void clearButton(ActionEvent actionEvent) {
@@ -52,13 +59,12 @@ public class FlagClearPassengerController
 
     @javafx.fxml.FXML
     public void FCflagAsSuspiciousButton(ActionEvent actionEvent) {
-//        Content selectedSlot = FCtableview.getSelectionModel().getSelectedItem();
+        Passenger selectedSlot = FCtableview.getSelectionModel().getSelectedItem();
+        System.out.println(selectedSlot);
+
+
 //        if (selectedSlot != null) {
-//            Content updatedSlot = new Content(selectedSlot.getItemName(), selectedSlot.getFlagReason(), selectedSlot.getItemDetails(), "Flagged");
-//
-//            FCtableview.getItems().remove(selectedSlot);
-//            FCtableview.getItems().add(updatedSlot);
-//        }
+//            Passenger updatedSlot = new Passenger(selectedSlot.getItemName(), selectedSlot.getFlagReason(), selectedSlot.getItemDetails(), "Cleared");
     }
 
     @javafx.fxml.FXML

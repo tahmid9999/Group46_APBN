@@ -35,8 +35,8 @@ public class PassengerFileHandler extends ObjectOutputStream {
         }
     }
 
-    public static List<Passenger> readFile(String filename){
-        List<Passenger> passengers = new ArrayList<>();
+    public static ArrayList<Passenger> readFile(String filename){
+        ArrayList<Passenger> passengers = new ArrayList<>();
         try{
             FileInputStream fis = new FileInputStream(filename);
             ObjectInputStream ois = new ObjectInputStream(fis);
@@ -58,7 +58,7 @@ public class PassengerFileHandler extends ObjectOutputStream {
     }
 
     // Write updated list of flights to file
-    public static void writeFile(List<Passenger> passengers, String filename) {
+    public static void writeFile(ArrayList<Passenger> passengers, String filename) {
         try (FileOutputStream fos = new FileOutputStream(filename);
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 

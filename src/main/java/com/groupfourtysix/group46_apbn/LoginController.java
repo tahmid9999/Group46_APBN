@@ -1,5 +1,7 @@
 package com.groupfourtysix.group46_apbn;
 
+import com.groupfourtysix.group46_apbn.util.AccountSession;
+import com.groupfourtysix.group46_apbn.util.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -75,13 +77,14 @@ public class LoginController
         for (Account acs: accountsArrayList) {
             if (userComboInput.getValue().equals(acs.getAccountUserType()) && emailAdressTextfield.getText().equals(acs.getAccountEmail()) && passwordTextfield.getText().equals(acs.getAccountPassword())) {
                 if (userComboInput.getValue().equals("Passenger")) {
+                    SessionManager.getAccountSession().setAccountID(acs.getAccountID());
                     try {
                         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/PassengerDashboard.fxml"));
                         Scene nextScene = new Scene(fxmlLoader.load());
-                        Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-                        nextStage.setTitle("Passenger Dashboard");
-                        nextStage.setScene(nextScene);
-                        nextStage.show();
+                        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+                        stage.setTitle("Passenger Dashboard");
+                        stage.setScene(nextScene);
+                        stage.show();
                     } catch (Exception e) {
                         System.out.println(e);
                     }

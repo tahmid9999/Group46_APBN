@@ -1,6 +1,7 @@
 package com.groupfourtysix.group46_apbn.Tahmid;
 
 import com.groupfourtysix.group46_apbn.HelloApplication;
+import com.groupfourtysix.group46_apbn.util.AccountSession;
 import com.groupfourtysix.group46_apbn.util.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +29,8 @@ public class PassengerDashboardController
 //        Passenger passenger =
 //
 //        SessionManager.setLoggedInPassenger(passenger);
+
+//        System.out.println(SessionManager.getAccountSession().getAccountID());
     }
 
     @javafx.fxml.FXML
@@ -36,8 +39,8 @@ public class PassengerDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/NewPassengerRegistration.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Hello!");
             nextStage.setScene(nextScene);
+            nextStage.setTitle("Register New Passenger");
             nextStage.show();
         } catch (Exception e) {
             System.out.println(e);
@@ -50,7 +53,7 @@ public class PassengerDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/CancelTravelView.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Hello!");
+            nextStage.setTitle("Cancel Travel");
             nextStage.setScene(nextScene);
             nextStage.show();
         }
@@ -65,7 +68,7 @@ public class PassengerDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/BoardingPassView.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Hello!");
+            nextStage.setTitle("Boarding");
             nextStage.setScene(nextScene);
             nextStage.show();
         }
@@ -80,7 +83,7 @@ public class PassengerDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Hello!");
+            nextStage.setTitle("Log In");
             nextStage.setScene(nextScene);
             nextStage.show();
         }
@@ -95,7 +98,7 @@ public class PassengerDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/FlightInfoView.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Hello!");
+            nextStage.setTitle("Flight Info");
             nextStage.setScene(nextScene);
             nextStage.show();
         }
@@ -110,7 +113,7 @@ public class PassengerDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/SecurityCheckView.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Hello!");
+            nextStage.setTitle("Security");
             nextStage.setScene(nextScene);
             nextStage.show();
         }
@@ -125,7 +128,7 @@ public class PassengerDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/LuggageInfoSubmissionView.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Hello!");
+            nextStage.setTitle("Luggage Info");
             nextStage.setScene(nextScene);
             nextStage.show();
         }
@@ -140,7 +143,7 @@ public class PassengerDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Tahmid/TravelSummaryView.fxml"));
             Scene nextScene = new Scene(fxmlLoader.load());
             Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            nextStage.setTitle("Hello!");
+            nextStage.setTitle("Travel Summary");
             nextStage.setScene(nextScene);
             nextStage.show();
         }
