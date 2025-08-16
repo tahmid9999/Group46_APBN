@@ -21,7 +21,7 @@ public class BoardingPassengerHandler extends ObjectOutputStream {
             ObjectOutputStream oos;
 
             if (f.exists() && f.length() > 0) {
-                oos = new BoardingPassengerHandler(fos); // append without writing header
+                oos = new BoardingPassengerHandler(fos);
             } else {
                 oos = new ObjectOutputStream(fos);
             }
