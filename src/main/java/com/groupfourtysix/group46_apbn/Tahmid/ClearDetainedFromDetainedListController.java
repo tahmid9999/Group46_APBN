@@ -79,7 +79,7 @@ public class ClearDetainedFromDetainedListController
         }
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void CDsubmitButton(ActionEvent actionEvent) {
     }
 

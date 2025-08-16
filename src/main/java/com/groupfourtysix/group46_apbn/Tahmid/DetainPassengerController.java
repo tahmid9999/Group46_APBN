@@ -48,7 +48,7 @@ public class DetainPassengerController
         a.showAndWait();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void DPsubmitButton(ActionEvent actionEvent) {
     }
 
