@@ -51,7 +51,7 @@ public class BaggageHandler extends ObjectOutputStream {
                         list.add((BaggageModel) obj);
                     }
                 } catch (EOFException eof) {
-                    break; // End of file reached
+                    break;
                 }
             }
         } catch (IOException | ClassNotFoundException e) {

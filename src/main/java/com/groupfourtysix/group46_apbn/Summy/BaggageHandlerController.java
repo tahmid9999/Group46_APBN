@@ -1,10 +1,17 @@
 package com.groupfourtysix.group46_apbn.Summy;
 
 import com.groupfourtysix.group46_apbn.Tahmid.Passenger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -15,17 +22,17 @@ public class BaggageHandlerController
     @javafx.fxml.FXML
     private TextField tagIdField;
     @javafx.fxml.FXML
-    private TableColumn<Passenger, String>passengerCol;
+    private TableColumn<BaggageModel, String>passengerCol;
     @javafx.fxml.FXML
-    private TableColumn<Passenger, String>luggageIdCol;
+    private TableColumn<BaggageModel, String>luggageIdCol;
     @javafx.fxml.FXML
-    private TableColumn<Passenger, String> flightCol;
+    private TableColumn<BaggageModel, String> flightCol;
     @javafx.fxml.FXML
     private TextArea issueDescriptionField;
     @javafx.fxml.FXML
     private Label confirmationLabel;
     @javafx.fxml.FXML
-    private TableView <Passenger>luggageTable;
+    private TableView <BaggageModel>luggageTable;
     @javafx.fxml.FXML
     private ComboBox<String> flagIDComboBox;
     @javafx.fxml.FXML
@@ -47,10 +54,13 @@ public class BaggageHandlerController
     @javafx.fxml.FXML
     private Button DelteButton;
 
+
+    private final ObservableList<BaggageModel> baggageData = FXCollections.observableArrayList();
+
     @javafx.fxml.FXML
     public void initialize() {
-        passengerCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        luggageIdCol.setCellValueFactory(new PropertyValueFactory<>("boardingPassID"));
+        passengerCol.setCellValueFactory(new PropertyValueFactory<>("passengerName"));
+        luggageIdCol.setCellValueFactory(new PropertyValueFactory<>("luggageID"));
         flightCol.setCellValueFactory(new PropertyValueFactory<>("flightNumber"));
 
         flagIDComboBox.getItems().addAll("Cleared", "Flagged");
@@ -99,27 +109,27 @@ public class BaggageHandlerController
         this.tagIdField = tagIdField;
     }
 
-    public TableColumn<Passenger, String> getPassengerCol() {
+    public TableColumn<BaggageModel, String> getPassengerCol() {
         return passengerCol;
     }
 
-    public void setPassengerCol(TableColumn<Passenger, String> passengerCol) {
+    public void setPassengerCol(TableColumn<BaggageModel, String> passengerCol) {
         this.passengerCol = passengerCol;
     }
 
-    public TableColumn<Passenger, String> getLuggageIdCol() {
+    public TableColumn<BaggageModel, String> getLuggageIdCol() {
         return luggageIdCol;
     }
 
-    public void setLuggageIdCol(TableColumn<Passenger, String> luggageIdCol) {
+    public void setLuggageIdCol(TableColumn<BaggageModel, String> luggageIdCol) {
         this.luggageIdCol = luggageIdCol;
     }
 
-    public TableColumn<Passenger, String> getFlightCol() {
+    public TableColumn<BaggageModel, String> getFlightCol() {
         return flightCol;
     }
 
-    public void setFlightCol(TableColumn<Passenger, String> flightCol) {
+    public void setFlightCol(TableColumn<BaggageModel, String> flightCol) {
         this.flightCol = flightCol;
     }
 
@@ -139,11 +149,11 @@ public class BaggageHandlerController
         this.confirmationLabel = confirmationLabel;
     }
 
-    public TableView<Passenger> getLuggageTable() {
+    public TableView<BaggageModel> getLuggageTable() {
         return luggageTable;
     }
 
-    public void setLuggageTable(TableView<Passenger> luggageTable) {
+    public void setLuggageTable(TableView<BaggageModel> luggageTable) {
         this.luggageTable = luggageTable;
     }
 
@@ -241,10 +251,12 @@ public class BaggageHandlerController
 
     @javafx.fxml.FXML
     public void opendownloadreport(ActionEvent actionEvent) {
+        openScene("GenerateDailyReport.fxml", actionEvent);
     }
 
     @javafx.fxml.FXML
     public void openEditBaggageView(ActionEvent actionEvent) {
+        openScene("EditBaggageView.fxml", actionEvent);
     }
 
     @javafx.fxml.FXML
@@ -270,21 +282,20 @@ public class BaggageHandlerController
         String luggageID = passengerID + foundPassenger.getFlightNumber() + randomNumber;
         foundPassenger.setBoardingPassID(luggageID);
 
-        String[] record = new String[]{
-                passengerID,
-                luggageID,
-                String.valueOf(totalBags),
+
+
+        BaggageModel baggage = new BaggageModel(
+                foundPassenger,
+                totalBags,
                 flag,
-                firstWeightText,
-                totalBags == 2 ? secondWeightText : "0",
+                Double.parseDouble(firstWeightText),
+                totalBags == 2 ? Double.parseDouble(secondWeightText) : 0,
                 issueDescription
-        };
+        );
 
-
-
-        BaggageHandler.createFile(record, "baggage_data.bin");
-        if (!luggageTable.getItems().contains(foundPassenger)) {
-            luggageTable.getItems().add(foundPassenger);
+        BaggageHandler.saveBaggage(baggage, "baggage_data.bin");
+        if (!luggageTable.getItems().contains(baggage)) {
+            luggageTable.getItems().add(baggage);
         } else {
             luggageTable.refresh();
         }
@@ -390,6 +401,18 @@ public class BaggageHandlerController
         issueDescriptionField.clear();
     }
 
+    private void openScene(String fxmlFile, ActionEvent event) {
+        try {
+            Scene scene = new Scene(
+                    FXMLLoader.load(getClass().getResource("/com/groupfourtysix/group46_apbn/Summy/" + fxmlFile)));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 
@@ -399,13 +422,17 @@ public class BaggageHandlerController
 
     @javafx.fxml.FXML
     public void DeleteSpecificBaggageInformation(ActionEvent actionEvent) {
+        openScene("DeleteSpecificBaggageInformation.fxml", actionEvent);
     }
 
     @javafx.fxml.FXML
     public void openManualCheckView(ActionEvent actionEvent) {
+        openScene("openManualCheckView.fxml", actionEvent);
     }
 
     @javafx.fxml.FXML
     public void openSearch(ActionEvent actionEvent) {
+        openScene("SearchLuggage.fxml", actionEvent);
+
     }
 }
