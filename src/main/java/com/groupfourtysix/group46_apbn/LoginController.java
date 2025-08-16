@@ -103,6 +103,32 @@ public class LoginController
                     }
                 }
 
+                if (userComboInput.getValue().equals("Flight Scheduler")) {
+                    try {
+                        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Habib/FlightDashboard.fxml"));
+                        Scene nextScene = new Scene(fxmlLoader.load());
+                        Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+                        nextStage.setTitle("Flight Dashboard");
+                        nextStage.setScene(nextScene);
+                        nextStage.show();
+                    } catch (Exception e) {
+                        System.out.println(e.getStackTrace());
+                    }
+                }
+
+                if (userComboInput.getValue().equals("Incident Logger")) {
+                    try {
+                        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Habib/IncidentLoggerDashboard.fxml"));
+                        Scene nextScene = new Scene(fxmlLoader.load());
+                        Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+                        nextStage.setTitle("Incident Logger Dashboard");
+                        nextStage.setScene(nextScene);
+                        nextStage.show();
+                    } catch (Exception e) {
+                        System.out.println(e.getStackTrace());
+                    }
+                }
+
             }
         }
 
