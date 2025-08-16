@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Habib.IncidentLoggerDashboardController">
+    <children>
+        <Label layoutX="129.0" layoutY="27.0" text="Welcome To Incident Logger Dashboard" underline="true">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Button layoutX="204.0" layoutY="83.0" mnemonicParsing="false" onAction="#AddIncidentLoggerButton" text="Add Incident Logger Information" />
+        <Button layoutX="202.0" layoutY="126.0" mnemonicParsing="false" onAction="#ViewIncidentLoggerButton" text="View Incident Logger Information" />
+        <Button layoutX="204.0" layoutY="168.0" mnemonicParsing="false" onAction="#EditIncidentLoggerButton" text="Edit Incident Logger Information" />
+        <Button layoutX="197.0" layoutY="208.0" mnemonicParsing="false" onAction="#DeleteIncidentLoggerButton" text="Delete Incident Logger Information" />
+        <Button layoutX="198.0" layoutY="249.0" mnemonicParsing="false" onAction="#CheckIncidentLoggerButton" text="Check Incident Logger Information" />
+        <Button layoutX="201.0" layoutY="288.0" mnemonicParsing="false" onAction="#FilterIncidentLoggerButton" text="Filter Incident Logger Information" />
+        <Button layoutX="270.0" layoutY="331.0" mnemonicParsing="false" onAction="#LogoutIncidentLoggerButton" text="LogOut" />
+    </children>
+</AnchorPane>

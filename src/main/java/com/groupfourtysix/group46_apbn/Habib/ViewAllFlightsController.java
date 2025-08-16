@@ -1,8 +1,15 @@
 package com.groupfourtysix.group46_apbn.Habib;
 
+import com.groupfourtysix.group46_apbn.HelloApplication;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -36,6 +43,8 @@ public class ViewAllFlightsController
     private TableColumn<Flight, String> FlightStatusCol;
     @javafx.fxml.FXML
     private TableColumn<Flight, String> ArrivalAirportCol;
+    @javafx.fxml.FXML
+    private Label TotalRecordLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -57,19 +66,33 @@ public class ViewAllFlightsController
             FlightInformationTable.getItems().add(flight);
         }
 
-//        Iterator<Flight> iterator = data.iterator();
-//        boolean removed = false;
-//        while (iterator.hasNext()){
-//            Flight f = iterator.next();
-//            if(f.getFlightNumber().equalsIgnoreCase("flight1")){
-//                iterator.remove();
-//                removed = true;
-//                break;
-//            }
-//        }
-//
-//        if(removed){
-//            FileHandler.writeFile(data, "FlightInfo.bin");
-//        }
+        TotalRecordLabel.setText(String.valueOf(flights.toArray().length));
+    }
 
-    }}
+    @javafx.fxml.FXML
+    public void BackButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Habib/FlightDashboard.fxml"));
+            Scene nextScene = new Scene(fxmlLoader.load());
+
+            Object source = actionEvent.getSource();
+            Stage nextStage = null;
+
+            if (source instanceof Node) {
+                nextStage = (Stage) ((Node) source).getScene().getWindow();
+            }
+
+            if (nextStage == null) {
+                System.err.println("Could not find stage");
+                return;
+            }
+
+            nextStage.setTitle("Flight Dashboard");
+            nextStage.setScene(nextScene);
+            nextStage.show();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+}

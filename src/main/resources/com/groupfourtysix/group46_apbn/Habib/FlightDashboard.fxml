@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Habib.FlightDashboardController">
+   <children>
+      <Label layoutX="172.0" layoutY="31.0" text="Welcome To Flight Dashboard" underline="true">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="232.0" layoutY="83.0" mnemonicParsing="false" onAction="#AddFlightInfoButton" text="Add Flight Information" />
+      <Button layoutX="232.0" layoutY="126.0" mnemonicParsing="false" onAction="#ViewFlightInfoButton" text="View Flight Information" />
+      <Button layoutX="232.0" layoutY="165.0" mnemonicParsing="false" onAction="#EditFlightInfoButton" text="Edit Flight Information" />
+      <Button layoutX="225.0" layoutY="209.0" mnemonicParsing="false" onAction="#DeleteFlightInfoButton" text="Delete Flight Information" />
+      <Button layoutX="228.0" layoutY="250.0" mnemonicParsing="false" onAction="#CheckFlightInfoButton" text="Check Flight Information" />
+      <Button layoutX="229.0" layoutY="289.0" mnemonicParsing="false" onAction="#FilterFlightInfoButton" text="Filter Flight Information" />
+      <Button layoutX="274.0" layoutY="331.0" mnemonicParsing="false" onAction="#LogoutFlightButton" text="LogOut" />
+   </children>
+</AnchorPane>

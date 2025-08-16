@@ -1,18 +1,21 @@
 package com.groupfourtysix.group46_apbn.Habib;
 
+import com.groupfourtysix.group46_apbn.HelloApplication;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.util.Iterator;
 import java.util.List;
 
 public class DeleteFlightInfoController
 {
-    @javafx.fxml.FXML
-    private TextField FlightNumberField;
 
-//    Custom
+    //    Custom
     String flightNumber;
     List<Flight> flights = FileHandler.readFile("FlightInfo.bin");
     @javafx.fxml.FXML
@@ -25,6 +28,8 @@ public class DeleteFlightInfoController
     private Label SeatAvailabilityLabel;
     @javafx.fxml.FXML
     private Label ArrivalTerminalLabel;
+    @javafx.fxml.FXML
+    private TextField FlightNumberField;
     @javafx.fxml.FXML
     private Label FlightStatusLabel;
     @javafx.fxml.FXML
@@ -82,5 +87,32 @@ public class DeleteFlightInfoController
             }
         }
 
+    }
+
+    @javafx.fxml.FXML
+    public void BackButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Habib/FlightDashboard.fxml"));
+            Scene nextScene = new Scene(fxmlLoader.load());
+
+            Object source = actionEvent.getSource();
+            Stage nextStage = null;
+
+            if (source instanceof Node) {
+                nextStage = (Stage) ((Node) source).getScene().getWindow();
+            }
+
+            if (nextStage == null) {
+                System.err.println("Could not find stage");
+                return;
+            }
+
+            nextStage.setTitle("Flight Dashboard");
+            nextStage.setScene(nextScene);
+            nextStage.show();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -34,5 +34,6 @@
             </columns>
         </TableView>
         <Button layoutX="518.0" layoutY="115.0" mnemonicParsing="false" onAction="#ViewAllFlightButton" prefHeight="34.0" prefWidth="189.0" text="View All Flight Information" />
+      <Button layoutX="769.0" layoutY="120.0" mnemonicParsing="false" onAction="#BackButton" text="Back" />
     </children>
 </AnchorPane>

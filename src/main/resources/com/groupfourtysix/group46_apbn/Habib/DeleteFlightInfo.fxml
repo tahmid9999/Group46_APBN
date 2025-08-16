@@ -43,5 +43,6 @@
       <Label fx:id="DepartureTerminalLabel" layoutX="538.0" layoutY="281.0" prefHeight="18.0" prefWidth="174.0" />
       <Label fx:id="ArrivalTerminalLabel" layoutX="516.0" layoutY="315.0" prefHeight="18.0" prefWidth="174.0" />
       <Label fx:id="FlightStatusLabel" layoutX="495.0" layoutY="344.0" prefHeight="18.0" prefWidth="174.0" />
+      <Button layoutX="675.0" layoutY="416.0" mnemonicParsing="false" onAction="#BackButton" prefHeight="35.0" prefWidth="74.0" text="Back" />
    </children>
 </AnchorPane>
