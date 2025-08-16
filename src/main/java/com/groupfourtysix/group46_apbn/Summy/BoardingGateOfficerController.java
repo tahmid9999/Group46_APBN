@@ -49,11 +49,6 @@ public class BoardingGateOfficerController
     }
 
 
-
-
-
-    }
-
     @javafx.fxml.FXML
     public void onGenerateReport(ActionEvent actionEvent) {
     }
