@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -36,6 +37,8 @@ public class ViewIncidentLoggerController
     private TableColumn<IncidentLogger, String> IncidentLocationCol;
     @javafx.fxml.FXML
     private TableColumn<IncidentLogger, String> IncidentIDCol;
+    @javafx.fxml.FXML
+    private Label TotalRecordLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -57,6 +60,8 @@ public class ViewIncidentLoggerController
             System.out.println(incidentLogger);
             IncidentLoggerTable.getItems().add(incidentLogger);
         }
+
+        TotalRecordLabel.setText(String.valueOf(incidentLoggers.toArray().length));
     }
 
     @javafx.fxml.FXML

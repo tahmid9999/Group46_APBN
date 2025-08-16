@@ -29,5 +29,15 @@
         </columns>
       </TableView>
       <Button layoutX="700.0" layoutY="38.0" mnemonicParsing="false" onAction="#BackButton" text="Back" />
+      <Label layoutX="23.0" layoutY="86.0" text="Total Incident Logger Records: ">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="TotalRecordLabel" layoutX="258.0" layoutY="86.0" prefHeight="26.0" prefWidth="243.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

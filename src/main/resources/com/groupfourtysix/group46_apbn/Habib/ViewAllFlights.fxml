@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="445.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Habib.ViewAllFlightsController">
+<AnchorPane prefHeight="463.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupfourtysix.group46_apbn.Habib.ViewAllFlightsController">
    <children>
       <Label layoutX="233.0" layoutY="22.0" text="View All Flights Information" underline="true">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-      <TableView fx:id="FlightInformationTable" layoutX="19.0" layoutY="109.0" prefHeight="312.0" prefWidth="906.0">
+      <TableView fx:id="FlightInformationTable" layoutX="17.0" layoutY="137.0" prefHeight="312.0" prefWidth="906.0">
         <columns>
           <TableColumn fx:id="FlightNumberCol" prefWidth="75.0" text="Flight Number" />
           <TableColumn fx:id="AirlineNameCol" prefWidth="75.0" text="Airline Name" />
@@ -31,5 +31,15 @@
         </columns>
       </TableView>
       <Button layoutX="833.0" layoutY="36.0" mnemonicParsing="false" onAction="#BackButton" text="Back" />
+      <Label layoutX="17.0" layoutY="95.0" text="Total Flight records: ">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="TotalRecordLabel" layoutX="186.0" layoutY="95.0" prefHeight="26.0" prefWidth="195.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

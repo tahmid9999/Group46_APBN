@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -42,6 +43,8 @@ public class ViewAllFlightsController
     private TableColumn<Flight, String> FlightStatusCol;
     @javafx.fxml.FXML
     private TableColumn<Flight, String> ArrivalAirportCol;
+    @javafx.fxml.FXML
+    private Label TotalRecordLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -62,6 +65,8 @@ public class ViewAllFlightsController
         for (Flight flight: flights){
             FlightInformationTable.getItems().add(flight);
         }
+
+        TotalRecordLabel.setText(String.valueOf(flights.toArray().length));
     }
 
     @javafx.fxml.FXML
